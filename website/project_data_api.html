@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المشروع 4: Data API Platform - دورة بايثون المكثفة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle">☰</button>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h1>🐍 دورة بايثون المكثفة</h1>
+    <p>Python Crash Course</p>
+  </div>
+  <nav class="sidebar-nav" id="sidebarNav">
+    <a href="../index.html" style="font-weight:600;color:#ffd166;">🏠 الرئيسية</a>
+    <a href="../roadmap.html" style="font-weight:600;color:#00d4ff;">🗺️ الخطة — حسب الدروس</a>
+    <div class="part-label">📘 الجزء الأول: الأساسيات</div>
+    <a href="chapter1.html" class="chapter-link">1. البدء مع بايثون</a>
+    <a href="chapter2.html" class="chapter-link">2. المتغيرات وأنواع البيانات البسيطة</a>
+    <a href="chapter3.html" class="chapter-link">3. مقدمة إلى القوائم</a>
+    <a href="chapter4.html" class="chapter-link">4. التعامل مع القوائم</a>
+    <a href="chapter5.html" class="chapter-link">5. جمل if</a>
+    <a href="chapter6.html" class="chapter-link">6. القواميس</a>
+    <a href="chapter7.html" class="chapter-link">7. إدخال المستخدم وحلقات while</a>
+    <a href="chapter8.html" class="chapter-link">8. الدوال</a>
+    <a href="chapter9.html" class="chapter-link">9. الكلاسات</a>
+    <a href="chapter10.html" class="chapter-link">10. الملفات والاستثناءات</a>
+    <a href="chapter11.html" class="chapter-link">11. اختبار الكود</a>
+    <div class="part-label">⚙️ Core Engineering</div>
+    <a href="python_advanced.html" class="chapter-link">🐍 Python Advanced</a>
+    <a href="asyncio.html" class="chapter-link">AsyncIO - البرمجة غير المتزامنة</a>
+    <a href="sql.html" class="chapter-link">SQL - قواعد البيانات</a>
+    <a href="postgresql.html" class="chapter-link">PostgreSQL متقدم</a>
+    <a href="linux.html" class="chapter-link">Linux - سطر الأوامر</a>
+    <a href="git.html" class="chapter-link">Git/GitHub - التحكم بالنسخ</a>
+    <a href="docker.html" class="chapter-link">Docker - الحاويات</a>
+    <div class="part-label">🚀 Backend + AI</div>
+    <a href="fastapi.html" class="chapter-link">FastAPI - تطبيقات الويب</a>
+    <a href="redis.html" class="chapter-link">Redis - التخزين المؤقت</a>
+    <a href="ai_fundamentals.html" class="chapter-link">🤖 أساسيات الذكاء الاصطناعي</a>
+    <div class="part-label">🧠 Agent Engineering</div>
+    <a href="rag.html" class="chapter-link">RAG - التوليد المعزز بالاسترجاع</a>
+    <a href="vector_databases.html" class="chapter-link">Vector Databases - Qdrant</a>
+    <a href="ollama.html" class="chapter-link">Ollama - النماذج المحلية</a>
+    <a href="langchain.html" class="chapter-link">LangChain - بناء تطبيقات LLM</a>
+    <a href="langgraph.html" class="chapter-link">LangGraph - الرسوم البيانية</a>
+    <a href="agents.html" class="chapter-link">🤖 وكلاء الذكاء الاصطناعي</a>
+    <div class="part-label">⚙️ MLOps Foundations</div>
+    <a href="mlflow.html" class="chapter-link">MLflow - تتبع التجارب</a>
+    <a href="cicd.html" class="chapter-link">CI/CD - GitHub Actions</a>
+    <a href="aws.html" class="chapter-link">AWS - EC2 + S3 + IAM</a>
+    <div class="part-label">🔷 مواضيع متقدمة</div>
+    <a href="oop.html" class="chapter-link">🔷 البرمجة كائنية التوجه OOP</a>
+    <div class="part-label">🚀 المشاريع - السنة الأولى</div>
+    <a href="project1.html" class="chapter-link">المشروع 1: غزو الفضائيين</a>
+    <a href="project2.html" class="chapter-link">المشروع 2: تصور البيانات</a>
+    <a href="project3.html" class="chapter-link">المشروع 3: تطبيقات الويب</a>
+    <a href="project_data_api.html" class="chapter-link" style="color:#ffd166;font-weight:700;">المشروع 4: Data API Platform</a>
+    <a href="project_ai_doc_chat.html" class="chapter-link">المشروع 5: AI Document Chat</a>
+    <a href="project_ai_platform.html" class="chapter-link">المشروع 6: AI Platform Deployment</a>
+    <div class="part-label">🧠 السنة الثانية - Advanced AI</div>
+    <a href="multi_agents.html" class="chapter-link">🧠 أنظمة Multi-Agent</a>
+    <a href="websockets.html" class="chapter-link">WebSockets بعمق</a>
+    <a href="message_queues.html" class="chapter-link">Message Queues - Redis/Celery</a>
+    <a href="event_driven.html" class="chapter-link">Event-Driven Architecture</a>
+    <a href="streaming_llm.html" class="chapter-link">Streaming - استجابات LLM</a>
+    <a href="specialized_agents.html" class="chapter-link">وكلاء متخصصون - Research/Review</a>
+    <a href="project_ai_research.html" class="chapter-link">مشروع: Multi-Agent Research</a>
+    <div class="part-label">🏗️ السنة الثانية — Infrastructure</div>
+    <a href="kubernetes.html" class="chapter-link">Kubernetes + Helm</a>
+    <a href="observability.html" class="chapter-link">Observability - Monitoring</a>
+    <a href="infra_dashboard.html" class="chapter-link">مشروع: AI Infra Dashboard</a>
+    <a href="security_perf.html" class="chapter-link">Security + Performance</a>
+    <div class="part-label">🚀 السنة الثانية — Career</div>
+    <a href="code_quality.html" class="chapter-link">إعادة هيكلة + جودة الكود</a>
+    <a href="career_digital.html" class="chapter-link">الظهور الرقمي + LinkedIn</a>
+    <a href="interview_prep.html" class="chapter-link">الاستعداد للمقابلات</a>
+    <a href="career_launch.html" class="chapter-link">إطلاق + Freelance</a>
+    <div class="part-label">📎 تمارين إضافية</div>
+    <a href="exercises.html" class="chapter-link">📝 تمارين + حلول</a>
+    <div class="part-label">📎 الملاحق</div>
+    <a href="appendices.html" class="chapter-link">الملاحق أ-د</a>
+  </nav>
+</div>
+
+<div class="main-content">
+  <div class="chapter-page">
+    <div class="chapter-header">
+      <span class="part-badge">🚀 المشاريع</span>
+      <h1>المشروع 4: Data API Platform</h1>
+      <p>بناء منصة API متكاملة مع FastAPI + PostgreSQL + Redis + Docker</p>
+    </div>
+    <div class="chapter-content">
+
+      <a href="../index.html" class="back-link">← العودة إلى الرئيسية</a>
+
+      <p>
+        مشروع عملي يدمج كل ما تعلمته: FastAPI، PostgreSQL، Redis، Docker.
+        ستبني منصة API للمنتجات مع caching، مصادقة، rate limiting، ونشر باستخدام Docker Compose.
+      </p>
+
+      <h2 class="section-title">هيكل المشروع</h2>
+
+      <div class="code-block">
+project/
+├── app/
+│   ├── __init__.py
+│   ├── main.py          <span class="cm"># FastAPI app</span>
+│   ├── config.py        <span class="cm"># Settings</span>
+│   ├── database.py      <span class="cm"># PostgreSQL connection</span>
+│   ├── models.py        <span class="cm"># SQLAlchemy models</span>
+│   ├── schemas.py       <span class="cm"># Pydantic schemas</span>
+│   ├── crud.py          <span class="cm"># Database operations</span>
+│   ├── cache.py         <span class="cm"># Redis caching</span>
+│   ├── auth.py          <span class="cm"># Authentication</span>
+│   └── routers/
+│       ├── __init__.py
+│       ├── products.py
+│       └── users.py
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── .env
+      </div>
+
+      <h2 class="section-title">1. الإعدادات والتوصيل</h2>
+
+      <div class="code-block">
+<span class="cm"># config.py</span>
+<span class="kw">from</span> pydantic_settings <span class="kw">import</span> BaseSettings
+
+<span class="kw">class</span> <span class="fn">Settings</span>(BaseSettings):
+    database_url: <span class="bu">str</span> = <span class="str">"postgresql://user:pass@localhost:5432/mydb"</span>
+    redis_url: <span class="bu">str</span> = <span class="str">"redis://localhost:6379/0"</span>
+    secret_key: <span class="bu">str</span> = <span class="str">"supersecretkey"</span>
+
+    <span class="kw">class</span> <span class="fn">Config</span>:
+        env_file = <span class="str">".env"</span>
+
+settings = Settings()
+      </div>
+
+      <div class="code-block">
+<span class="cm"># database.py</span>
+<span class="kw">from</span> sqlalchemy <span class="kw">import</span> create_engine
+<span class="kw">from</span> sqlalchemy.orm <span class="kw">import</span> sessionmaker, declarative_base
+<span class="kw">from</span> app.config <span class="kw">import</span> settings
+
+engine = create_engine(settings.database_url)
+SessionLocal = sessionmaker(bind=engine)
+Base = declarative_base()
+
+<span class="kw">def</span> <span class="fn">get_db</span>():
+    db = SessionLocal()
+    <span class="kw">try</span>:
+        <span class="kw">yield</span> db
+    <span class="kw">finally</span>:
+        db.close()
+      </div>
+
+      <div class="code-block">
+<span class="cm"># cache.py</span>
+<span class="kw">import</span> redis
+<span class="kw">import</span> json
+<span class="kw">from</span> app.config <span class="kw">import</span> settings
+
+cache = redis.Redis.from_url(settings.redis_url, decode_responses=<span class="kw">True</span>)
+
+<span class="kw">def</span> <span class="fn">get_cached</span>(key: <span class="bu">str</span>):
+    data = cache.get(key)
+    <span class="kw">return</span> json.loads(data) <span class="kw">if</span> data <span class="kw">else</span> <span class="kw">None</span>
+
+<span class="kw">def</span> <span class="fn">set_cache</span>(key: <span class="bu">str</span>, value: <span class="bu">any</span>, ttl: <span class="bu">int</span> = <span class="num">300</span>):
+    cache.setex(key, ttl, json.dumps(value, default=<span class="bu">str</span>))
+      </div>
+
+      <h2 class="section-title">2. النماذج (Models)</h2>
+
+      <div class="code-block">
+<span class="cm"># models.py</span>
+<span class="kw">from</span> sqlalchemy <span class="kw">import</span> Column, Integer, String, Float, Boolean, DateTime
+<span class="kw">from</span> sqlalchemy.sql <span class="kw">import</span> func
+<span class="kw">from</span> app.database <span class="kw">import</span> Base
+
+<span class="kw">class</span> <span class="fn">Product</span>(Base):
+    __tablename__ = <span class="str">"products"</span>
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(<span class="num">200</span>), nullable=<span class="kw">False</span>)
+    description = Column(String(<span class="num">1000</span>))
+    price = Column(Float, nullable=<span class="kw">False</span>)
+    in_stock = Column(Boolean, default=<span class="kw">True</span>)
+    created_at = Column(DateTime, server_default=func.now())
+      </div>
+
+      <div class="code-block">
+<span class="cm"># schemas.py</span>
+<span class="kw">from</span> pydantic <span class="kw">import</span> BaseModel
+<span class="kw">from</span> datetime <span class="kw">import</span> datetime
+<span class="kw">from</span> typing <span class="kw">import</span> Optional
+
+<span class="kw">class</span> <span class="fn">ProductCreate</span>(BaseModel):
+    name: <span class="bu">str</span>
+    description: Optional[<span class="bu">str</span>] = <span class="kw">None</span>
+    price: <span class="bu">float</span>
+    in_stock: <span class="bu">bool</span> = <span class="kw">True</span>
+
+<span class="kw">class</span> <span class="fn">ProductResponse</span>(ProductCreate):
+    id: <span class="bu">int</span>
+    created_at: datetime
+
+    <span class="kw">class</span> <span class="fn">Config</span>:
+        from_attributes = <span class="kw">True</span>
+      </div>
+
+      <h2 class="section-title">3. الـ CRUD Operations</h2>
+
+      <div class="code-block">
+<span class="cm"># crud.py</span>
+<span class="kw">from</span> sqlalchemy.orm <span class="kw">import</span> Session
+<span class="kw">from</span> app.models <span class="kw">import</span> Product
+<span class="kw">from</span> app.schemas <span class="kw">import</span> ProductCreate
+
+<span class="kw">def</span> <span class="fn">get_products</span>(db: Session, skip: <span class="bu">int</span> = <span class="num">0</span>, limit: <span class="bu">int</span> = <span class="num">100</span>):
+    <span class="kw">return</span> db.query(Product).offset(skip).limit(limit).all()
+
+<span class="kw">def</span> <span class="fn">get_product</span>(db: Session, product_id: <span class="bu">int</span>):
+    <span class="kw">return</span> db.query(Product).filter(Product.id == product_id).first()
+
+<span class="kw">def</span> <span class="fn">create_product</span>(db: Session, product: ProductCreate):
+    db_product = Product(**product.model_dump())
+    db.add(db_product)
+    db.commit()
+    db.refresh(db_product)
+    <span class="kw">return</span> db_product
+
+<span class="kw">def</span> <span class="fn">delete_product</span>(db: Session, product_id: <span class="bu">int</span>):
+    product = <span class="fn">get_product</span>(db, product_id)
+    <span class="kw">if</span> product:
+        db.delete(product)
+        db.commit()
+    <span class="kw">return</span> product
+      </div>
+
+      <h2 class="section-title">4. الـ Routers</h2>
+
+      <div class="code-block">
+<span class="cm"># routers/products.py</span>
+<span class="kw">from</span> fastapi <span class="kw">import</span> APIRouter, Depends, HTTPException
+<span class="kw">from</span> sqlalchemy.orm <span class="kw">import</span> Session
+<span class="kw">from</span> app.database <span class="kw">import</span> get_db
+<span class="kw">from</span> app.crud <span class="kw">import</span> get_products, get_product, create_product, delete_product
+<span class="kw">from</span> app.schemas <span class="kw">import</span> ProductCreate, ProductResponse
+<span class="kw">from</span> app.cache <span class="kw">import</span> get_cached, set_cache
+
+router = APIRouter(prefix=<span class="str">"/products"</span>, tags=[<span class="str">"products"</span>])
+
+<span class="nd">@router.get</span>(<span class="str">"/"</span>, response_model=<span class="bu">list</span>[ProductResponse])
+<span class="kw">def</span> <span class="fn">list_products</span>(skip: <span class="bu">int</span> = <span class="num">0</span>, limit: <span class="bu">int</span> = <span class="num">100</span>, db: Session = Depends(get_db)):
+    <span class="kw">return</span> <span class="fn">get_products</span>(db, skip, limit)
+
+<span class="nd">@router.get</span>(<span class="str">"/{product_id}"</span>, response_model=ProductResponse)
+<span class="kw">def</span> <span class="fn">get_product_by_id</span>(product_id: <span class="bu">int</span>, db: Session = Depends(get_db)):
+    <span class="cm"># التحقق من cache أولاً</span>
+    cached = <span class="fn">get_cached</span>(<span class="str">f"product:{product_id}"</span>)
+    <span class="kw">if</span> cached:
+        <span class="kw">return</span> cached
+
+    product = <span class="fn">get_product</span>(db, product_id)
+    <span class="kw">if</span> <span class="kw">not</span> product:
+        <span class="kw">raise</span> HTTPException(<span class="num">404</span>, <span class="str">"Product not found"</span>)
+
+    <span class="fn">set_cache</span>(<span class="str">f"product:{product_id}"</span>, product)
+    <span class="kw">return</span> product
+
+<span class="nd">@router.post</span>(<span class="str">"/"</span>, response_model=ProductResponse, status_code=<span class="num">201</span>)
+<span class="kw">def</span> <span class="fn">create_new_product</span>(product: ProductCreate, db: Session = Depends(get_db)):
+    <span class="kw">return</span> <span class="fn">create_product</span>(db, product)
+
+<span class="nd">@router.delete</span>(<span class="str">"/{product_id}"</span>, status_code=<span class="num">204</span>)
+<span class="kw">def</span> <span class="fn">delete_product_by_id</span>(product_id: <span class="bu">int</span>, db: Session = Depends(get_db)):
+    <span class="fn">delete_product</span>(db, product_id)
+    cache.delete(<span class="str">f"product:{product_id}"</span>)
+      </div>
+
+      <h2 class="section-title">5. المصادقة (Auth)</h2>
+
+      <div class="code-block">
+<span class="cm"># auth.py — JWT Authentication</span>
+<span class="kw">from</span> datetime <span class="kw">import</span> datetime, timedelta
+<span class="kw">from</span> jose <span class="kw">import</span> jwt
+
+SECRET_KEY = settings.secret_key
+ALGORITHM = <span class="str">"HS256"</span>
+ACCESS_TOKEN_EXPIRE = <span class="num">30</span>  <span class="cm"># دقيقة</span>
+
+<span class="kw">def</span> <span class="fn">create_access_token</span>(data: <span class="bu">dict</span>):
+    to_encode = data.copy()
+    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE)
+    to_encode.update({<span class="str">"exp"</span>: expire})
+    <span class="kw">return</span> jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
+<span class="cm"># استخدام مع FastAPI Dependency</span>
+<span class="kw">from</span> fastapi <span class="kw">import</span> Depends, HTTPException, status
+<span class="kw">from</span> fastapi.security <span class="kw">import</span> HTTPBearer, HTTPAuthorizationCredentials
+
+security = HTTPBearer()
+
+<span class="kw">def</span> <span class="fn">verify_token</span>(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    token = credentials.credentials
+    <span class="kw">try</span>:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        <span class="kw">return</span> payload
+    <span class="kw">except</span> jwt.JWTError:
+        <span class="kw">raise</span> HTTPException(status_code=<span class="num">401</span>, detail=<span class="str">"Invalid token"</span>)
+      </div>
+
+      <h2 class="section-title">6. Docker Compose</h2>
+
+      <div class="code-block">
+<span class="cm"># docker-compose.yml</span>
+<span class="kw">version</span>: <span class="str">'3.8'</span>
+<span class="kw">services</span>:
+  app:
+    build: .
+    ports:
+      - <span class="str">"8000:8000"</span>
+    depends_on:
+      - db
+      - redis
+    environment:
+      - DATABASE_URL=postgresql://user:pass@db:5432/mydb
+      - REDIS_URL=redis://redis:6379/0
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: mydb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+
+<span class="kw">volumes</span>:
+  postgres_data:
+      </div>
+
+      <h2 class="section-title">7. التمارين</h2>
+
+      <div class="exercise">
+        <strong>تمرين 1: أكمل المشروع</strong><br>
+        أضف نموذج User (id, username, email, hashed_password) وراوتر لإنشاء المستخدمين.
+      </div>
+
+      <div class="exercise">
+        <strong>تمرين 2: Rate Limiting</strong><br>
+        أضف rate limiting باستخدام Redis — 100 طلب لكل دقيقة لكل مستخدم.
+      </div>
+
+      <div class="exercise">
+        <strong>تمرين 3: Pagination</strong><br>
+        حسّن <span class="inline-code">list_products</span> ليدعم pagination ويعيد العدد الإجمالي.
+      </div>
+
+      <div class="summary-box">
+        <h3>📝 خلاصة المشروع</h3>
+        <ul>
+          <li>FastAPI + SQLAlchemy + PostgreSQL</li>
+          <li>Redis caching لتسريع الاستجابات</li>
+          <li>JWT Authentication</li>
+          <li>Docker Compose للنشر</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

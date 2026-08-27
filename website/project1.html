@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المشروع 1: غزو الفضائيين - دورة بايثون المكثفة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="sidebar-toggle" id="sidebarToggle">☰</button>
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h1>🐍 دورة بايثون المكثفة</h1>
+    <p>Python Crash Course</p>
+  </div>
+  <nav class="sidebar-nav" id="sidebarNav">
+    <a href="../index.html" style="font-weight:600;color:#ffd166;">🏠 الرئيسية</a>
+    <a href="../roadmap.html" style="font-weight:600;color:#00d4ff;">🗺️ الخطة — حسب الدروس</a>
+    <div class="part-label">📘 الجزء الأول: الأساسيات</div>
+    <a href="chapter1.html" class="chapter-link">1. البدء مع بايثون</a>
+    <a href="chapter2.html" class="chapter-link">2. المتغيرات وأنواع البيانات البسيطة</a>
+    <a href="chapter3.html" class="chapter-link">3. مقدمة إلى القوائم</a>
+    <a href="chapter4.html" class="chapter-link">4. التعامل مع القوائم</a>
+    <a href="chapter5.html" class="chapter-link">5. جمل if</a>
+    <a href="chapter6.html" class="chapter-link">6. القواميس</a>
+    <a href="chapter7.html" class="chapter-link">7. إدخال المستخدم وحلقات while</a>
+    <a href="chapter8.html" class="chapter-link">8. الدوال</a>
+    <a href="chapter9.html" class="chapter-link">9. الكلاسات</a>
+    <a href="chapter10.html" class="chapter-link">10. الملفات والاستثناءات</a>
+    <a href="chapter11.html" class="chapter-link">11. اختبار الكود</a>
+    <div class="part-label">⚙️ Core Engineering</div>
+    <a href="python_advanced.html" class="chapter-link">🐍 Python Advanced</a>
+    <a href="asyncio.html" class="chapter-link">AsyncIO - البرمجة غير المتزامنة</a>
+    <a href="sql.html" class="chapter-link">SQL - قواعد البيانات</a>
+    <a href="postgresql.html" class="chapter-link">PostgreSQL متقدم</a>
+    <a href="linux.html" class="chapter-link">Linux - سطر الأوامر</a>
+    <a href="git.html" class="chapter-link">Git/GitHub - التحكم بالنسخ</a>
+    <a href="docker.html" class="chapter-link">Docker - الحاويات</a>
+    <div class="part-label">🚀 Backend + AI</div>
+    <a href="fastapi.html" class="chapter-link">FastAPI - تطبيقات الويب</a>
+    <a href="redis.html" class="chapter-link">Redis - التخزين المؤقت</a>
+    <a href="ai_fundamentals.html" class="chapter-link">🤖 أساسيات الذكاء الاصطناعي</a>
+    <div class="part-label">🧠 Agent Engineering</div>
+    <a href="rag.html" class="chapter-link">RAG - التوليد المعزز بالاسترجاع</a>
+    <a href="vector_databases.html" class="chapter-link">Vector Databases - Qdrant</a>
+    <a href="ollama.html" class="chapter-link">Ollama - النماذج المحلية</a>
+    <a href="langchain.html" class="chapter-link">LangChain - بناء تطبيقات LLM</a>
+    <a href="langgraph.html" class="chapter-link">LangGraph - الرسوم البيانية</a>
+    <a href="agents.html" class="chapter-link">🤖 وكلاء الذكاء الاصطناعي</a>
+    <div class="part-label">⚙️ MLOps Foundations</div>
+    <a href="mlflow.html" class="chapter-link">MLflow - تتبع التجارب</a>
+    <a href="cicd.html" class="chapter-link">CI/CD - GitHub Actions</a>
+    <a href="aws.html" class="chapter-link">AWS - EC2 + S3 + IAM</a>
+    <div class="part-label">🔷 مواضيع متقدمة</div>
+    <a href="oop.html" class="chapter-link">🔷 البرمجة كائنية التوجه OOP</a>
+    <div class="part-label">🚀 المشاريع - السنة الأولى</div>
+    <a href="project1.html" class="chapter-link" style="color:#ffd166;font-weight:700;">المشروع 1: غزو الفضائيين</a>
+    <a href="project2.html" class="chapter-link">المشروع 2: تصور البيانات</a>
+    <a href="project3.html" class="chapter-link">المشروع 3: تطبيقات الويب</a>
+    <a href="project_data_api.html" class="chapter-link">المشروع 4: Data API Platform</a>
+    <a href="project_ai_doc_chat.html" class="chapter-link">المشروع 5: AI Document Chat</a>
+    <a href="project_ai_platform.html" class="chapter-link">المشروع 6: AI Platform Deployment</a>
+    <div class="part-label">🧠 السنة الثانية - Advanced AI</div>
+    <a href="multi_agents.html" class="chapter-link">🧠 أنظمة Multi-Agent</a>
+    <a href="websockets.html" class="chapter-link">WebSockets بعمق</a>
+    <a href="message_queues.html" class="chapter-link">Message Queues - Redis/Celery</a>
+    <a href="event_driven.html" class="chapter-link">Event-Driven Architecture</a>
+    <a href="streaming_llm.html" class="chapter-link">Streaming - استجابات LLM</a>
+    <a href="specialized_agents.html" class="chapter-link">وكلاء متخصصون - Research/Review</a>
+    <a href="project_ai_research.html" class="chapter-link">مشروع: Multi-Agent Research</a>
+    <div class="part-label">🏗️ السنة الثانية — Infrastructure</div>
+    <a href="kubernetes.html" class="chapter-link">Kubernetes + Helm</a>
+    <a href="observability.html" class="chapter-link">Observability - Monitoring</a>
+    <a href="infra_dashboard.html" class="chapter-link">مشروع: AI Infra Dashboard</a>
+    <a href="security_perf.html" class="chapter-link">Security + Performance</a>
+    <div class="part-label">🚀 السنة الثانية — Career</div>
+    <a href="code_quality.html" class="chapter-link">إعادة هيكلة + جودة الكود</a>
+    <a href="career_digital.html" class="chapter-link">الظهور الرقمي + LinkedIn</a>
+    <a href="interview_prep.html" class="chapter-link">الاستعداد للمقابلات</a>
+    <a href="career_launch.html" class="chapter-link">إطلاق + Freelance</a>
+    <div class="part-label">📎 تمارين إضافية</div>
+    <a href="exercises.html" class="chapter-link">📝 تمارين + حلول</a>
+    <div class="part-label">📎 الملاحق</div>
+    <a href="appendices.html" class="chapter-link">الملاحق أ-د</a>
+  </nav>
+</div>
+
+<div class="main-content">
+  <div class="chapter-page">
+    <div class="chapter-header">
+      <span class="part-badge">🚀 المشروع 1</span>
+      <h1>غزو الفضائيين</h1>
+      <p>بناء لعبة حاسوبية كاملة باستخدام مكتبة Pygame — الفصول 12 - 13 - 14</p>
+    </div>
+    <div class="chapter-content">
+
+      <a href="../index.html" class="back-link">← العودة إلى الرئيسية</a>
+
+      <p>مرحباً بك في أول مشروع عملي في الكتاب! في هذا المشروع، سنبني لعبة كاملة تسمى "غزو الفضائيين" (Alien Invasion) باستخدام مكتبة <strong>Pygame</strong>. ستتعلم خلال ثلاثة فصول (12 و13 و14) كيفية بناء لعبة فيديو ثنائية الأبعاد خطوة بخطوة، بدءاً من إنشاء سفينة تطلق الرصاص، ومروراً بإضافة أسطول من الفضائيين، وانتهاءً بنظام تسجيل النقاط ومستويات الصعوبة.</p>
+
+      <p>هذا المشروع هو تتويج لمهاراتك في البرمجة كائنية التوجه (OOP) التي تعلمتها في الفصول السابقة. ستستخدم الكلاسات لتمثيل السفينة والرصاص والفضائيين، وستتعامل مع الأحداث (events) وحلقات اللعبة الرئيسية (game loop)، وستتعلم كيفية إدارة الشاشة والرسوم المتحركة.</p>
+
+      <h2 class="section-title">نظرة عامة على الفصول</h2>
+
+      <div class="project-card">
+        <h3>الفصل 12: سفينة تطلق الرصاص <span class="chapter-badge">الفصل 12</span></h3>
+        <p>في هذا الفصل، تبدأ رحلة بناء اللعبة. ستتعلم تثبيت Pygame، إنشاء نافذة اللعبة، وإضافة سفينة تتحرك يميناً ويساراً وتطلق الرصاص. هذا الفصل يؤسس لهيكل اللعبة الأساسي.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>الفصل 13: الفضائيون <span class="chapter-badge">الفصل 13</span></h3>
+        <p>بعد أن أصبحت السفينة تعمل، حان وقت إضافة الأعداء! ستتعلم إنشاء أسطول من الفضائيين، تحريكهم عبر الشاشة، إطلاق النار عليهم، والتعامل مع حالات التصادم بين الرصاص والفضائيين.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>الفصل 14: تسجيل النقاط <span class="chapter-badge">الفصل 14</span></h3>
+        <p>اللمسات الأخيرة: إضافة زر للعب، مستويات صعوبة متزايدة، عرض النقاط، أعلى نتيجة، وعدد السفن المتبقية. هذا الفصل يحول اللعبة من مجرد نموذج تجريبي إلى لعبة كاملة.</p>
+      </div>
+
+      <h2 class="section-title">الفصل 12: سفينة تطلق الرصاص</h2>
+
+      <h3 class="subsection-title">12.1 تخطيط المشروع</h3>
+      <p>قبل كتابة أي كود، من المهم التخطيط للمشروع. لعبة "غزو الفضائيين" ستكون لعبة ثنائية الأبعاد حيث يتحكم اللاعب بسفينة في أسفل الشاشة، وتظهر الفضائيون من الأعلى ويتحركون ببطء نحو الأسفل. مهمة اللاعب هي إطلاق الرصاص على الفضائيين وتجنب وصولهم إلى سفينته.</p>
+      <p>سنقسم الكود إلى عدة ملفات لتنظيم العمل:</p>
+      <ul>
+        <li><span class="inline-code">alien_invasion.py</span> — الملف الرئيسي للعبة</li>
+        <li><span class="inline-code">settings.py</span> — كلاس الإعدادات</li>
+        <li><span class="inline-code">ship.py</span> — كلاس السفينة</li>
+        <li><span class="inline-code">bullet.py</span> — كلاس الرصاصة</li>
+        <li><span class="inline-code">alien.py</span> — كلاس الفضائي</li>
+        <li><span class="inline-code">game_stats.py</span> — إحصائيات اللعبة</li>
+        <li><span class="inline-code">scoreboard.py</span> — لوحة النتائج</li>
+        <li><span class="inline-code">button.py</span> — زر اللعب</li>
+      </ul>
+
+      <h3 class="subsection-title">12.2 تثبيت Pygame</h3>
+      <p>Pygame هي مكتبة مفتوحة المصدر تتيح بناء ألعاب فيديو بلغة بايثون. توفر أدوات للتعامل مع الرسومات والصوت وأحداث لوحة المفاتيح والفأرة.</p>
+      <div class="code-block">
+<span class="cm"># تثبيت Pygame عبر pip</span>
+python3 -m pip install pygame
+      </div>
+      <p>لتأكيد التثبيت، يمكنك تشغيل:</p>
+      <div class="code-block">
+python3 -m pygame --version
+      </div>
+
+      <h3 class="subsection-title">12.3 إنشاء نافذة اللعبة وحلقة اللعبة الرئيسية</h3>
+      <p>كل لعبة Pygame تبدأ بإنشاء نافذة وحلقة رئيسية (game loop) تدير الأحداث وتحدث الرسوم. إليك الهيكل الأساسي:</p>
+      <div class="code-block">
+<span class="kw">import</span> pygame
+<span class="kw">import</span> sys
+
+<span class="kw">class</span> <span class="fn">AlienInvasion</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>):
+        pygame.init()
+        <span class="kw">self</span>.screen = pygame.display.set_mode((1200, 800))
+        pygame.display.set_caption(<span class="str">"Alien Invasion"</span>)
+
+    <span class="kw">def</span> <span class="fn">run_game</span>(<span class="kw">self</span>):
+        <span class="kw">while</span> <span class="kw">True</span>:
+            <span class="kw">for</span> event <span class="kw">in</span> pygame.event.get():
+                <span class="kw">if</span> event.type == pygame.QUIT:
+                    sys.exit()
+            pygame.display.flip()
+
+<span class="kw">if</span> __name__ == <span class="str">'__main__'</span>:
+    ai = AlienInvasion()
+    ai.run_game()
+      </div>
+      <p><span class="inline-code">pygame.init()</span> تهيئ جميع وحدات Pygame. <span class="inline-code">pygame.display.set_mode()</span> تنشئ نافذة بأبعاد 1200×800 بكسل. الحلقة الرئيسية تستمر في العمل حتى يغلق المستخدم النافذة، وتستمع إلى الأحداث (مثل ضغطات المفاتيح) وتحدث الشاشة.</p>
+
+      <h3 class="subsection-title">12.4 كلاس الإعدادات (Settings)</h3>
+      <p>بدلاً من توزيع الثوابت في كل أرجاء الكود، نضعها في كلاس إعدادات مركزي. هذا يجعل تعديل اللعبة سهلاً للغاية:</p>
+      <div class="code-block">
+<span class="kw">class</span> <span class="fn">Settings</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>):
+        <span class="kw">self</span>.screen_width = 1200
+        <span class="kw">self</span>.screen_height = 800
+        <span class="kw">self</span>.bg_color = (230, 230, 230)
+
+        <span class="kw">self</span>.ship_speed = 1.5
+        <span class="kw">self</span>.bullet_speed = 2.5
+        <span class="kw">self</span>.bullet_width = 3
+        <span class="kw">self</span>.bullet_height = 15
+        <span class="kw">self</span>.bullet_color = (60, 60, 60)
+        <span class="kw">self</span>.bullets_allowed = 3
+
+        <span class="kw">self</span>.alien_speed = 1.0
+        <span class="kw">self</span>.fleet_drop_speed = 10
+        <span class="kw">self</span>.fleet_direction = 1  <span class="cm"># 1: يمين, -1: يسار</span>
+      </div>
+
+      <h3 class="subsection-title">12.5 إضافة صورة السفينة</h3>
+      <p>نحتاج إلى صورة للسفينة. يمكنك استخدام أي صورة صغيرة (مثل 60×80 بكسل). ضعها في مجلد <span class="inline-code">images/</span> داخل مجلد المشروع. إليك كلاس السفينة:</p>
+      <div class="code-block">
+<span class="kw">import</span> pygame
+
+<span class="kw">class</span> <span class="fn">Ship</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>, ai_game):
+        <span class="kw">self</span>.screen = ai_game.screen
+        <span class="kw">self</span>.settings = ai_game.settings
+        <span class="kw">self</span>.screen_rect = ai_game.screen.get_rect()
+
+        <span class="kw">self</span>.image = pygame.image.load(<span class="str">'images/ship.bmp'</span>)
+        <span class="kw">self</span>.rect = <span class="kw">self</span>.image.get_rect()
+
+        <span class="kw">self</span>.rect.midbottom = <span class="kw">self</span>.screen_rect.midbottom
+        <span class="kw">self</span>.x = <span class="kw">float</span>(<span class="kw">self</span>.rect.x)
+        <span class="kw">self</span>.moving_right = <span class="kw">False</span>
+        <span class="kw">self</span>.moving_left = <span class="kw">False</span>
+
+    <span class="kw">def</span> <span class="fn">blitme</span>(<span class="kw">self</span>):
+        <span class="kw">self</span>.screen.blit(<span class="kw">self</span>.image, <span class="kw">self</span>.rect)
+      </div>
+
+      <h3 class="subsection-title">12.6 إعادة التكوين (Refactoring)</h3>
+      <p>مع نمو اللعبة، يصبح الكود في الملف الرئيسي كبيراً جداً. لذا نُعيد تنظيم الكود بنقل أجزاء منه إلى طرق (methods) أصغر في كلاسات منفصلة. مثلاً ننقل معالجة الأحداث إلى <span class="inline-code">_check_events()</span> وتحديث الشاشة إلى <span class="inline-code">_update_screen()</span>:</p>
+      <div class="code-block">
+<span class="kw">def</span> <span class="fn">_check_events</span>(<span class="kw">self</span>):
+    <span class="kw">for</span> event <span class="kw">in</span> pygame.event.get():
+        <span class="kw">if</span> event.type == pygame.QUIT:
+            sys.exit()
+        <span class="kw">elif</span> event.type == pygame.KEYDOWN:
+            <span class="kw">if</span> event.key == pygame.K_RIGHT:
+                <span class="kw">self</span>.ship.moving_right = <span class="kw">True</span>
+            <span class="kw">elif</span> event.key == pygame.K_LEFT:
+                <span class="kw">self</span>.ship.moving_left = <span class="kw">True</span>
+        <span class="kw">elif</span> event.type == pygame.KEYUP:
+            <span class="kw">if</span> event.key == pygame.K_RIGHT:
+                <span class="kw">self</span>.ship.moving_right = <span class="kw">False</span>
+            <span class="kw">elif</span> event.key == pygame.K_LEFT:
+                <span class="kw">self</span>.ship.moving_left = <span class="kw">False</span>
+      </div>
+
+      <h3 class="subsection-title">12.7 إطلاق الرصاص</h3>
+      <p>الرصاصات عبارة عن مستطيلات (rectangles) تتحرك للأعلى. نستخدم مجموعة (group) لتخزين الرصاصات النشطة:</p>
+      <div class="code-block">
+<span class="kw">class</span> <span class="fn">Bullet</span>(pygame.sprite.Sprite):
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>, ai_game):
+        <span class="kw">super</span>().__init__()
+        <span class="kw">self</span>.screen = ai_game.screen
+        <span class="kw">self</span>.settings = ai_game.settings
+        <span class="kw">self</span>.color = <span class="kw">self</span>.settings.bullet_color
+
+        <span class="kw">self</span>.rect = pygame.Rect(0, 0, <span class="kw">self</span>.settings.bullet_width,
+            <span class="kw">self</span>.settings.bullet_height)
+        <span class="kw">self</span>.rect.midtop = ai_game.ship.rect.midtop
+        <span class="kw">self</span>.y = <span class="kw">float</span>(<span class="kw">self</span>.rect.y)
+
+    <span class="kw">def</span> <span class="fn">update</span>(<span class="kw">self</span>):
+        <span class="kw">self</span>.y -= <span class="kw">self</span>.settings.bullet_speed
+        <span class="kw">self</span>.rect.y = <span class="kw">self</span>.y
+
+    <span class="kw">def</span> <span class="fn">draw_bullet</span>(<span class="kw">self</span>):
+        pygame.draw.rect(<span class="kw">self</span>.screen, <span class="kw">self</span>.color, <span class="kw">self</span>.rect)
+      </div>
+
+      <div class="note"><strong>ملاحظة:</strong> استخدام <span class="inline-code">pygame.sprite.Sprite</span> يتيح لنا تجميع الرصاصات في مجموعة <span class="inline-code">pygame.sprite.Group</span>، مما يسهل تحديث ورسم جميع الرصاصات دفعة واحدة.</div>
+
+      <h2 class="section-title">الفصل 13: الفضائيون</h2>
+
+      <h3 class="subsection-title">13.1 إنشاء كلاس الفضائي</h3>
+      <p>الفضائي يشبه السفينة في بنيته — لديه صورة ومستطيل (rect). لكنه يتحرك بطريقة مختلفة:</p>
+      <div class="code-block">
+<span class="kw">class</span> <span class="fn">Alien</span>(pygame.sprite.Sprite):
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>, ai_game):
+        <span class="kw">super</span>().__init__()
+        <span class="kw">self</span>.screen = ai_game.screen
+        <span class="kw">self</span>.settings = ai_game.settings
+        <span class="kw">self</span>.image = pygame.image.load(<span class="str">'images/alien.bmp'</span>)
+        <span class="kw">self</span>.rect = <span class="kw">self</span>.image.get_rect()
+        <span class="kw">self</span>.rect.x = <span class="kw">self</span>.rect.width
+        <span class="kw">self</span>.rect.y = <span class="kw">self</span>.rect.height
+        <span class="kw">self</span>.x = <span class="kw">float</span>(<span class="kw">self</span>.rect.x)
+
+    <span class="kw">def</span> <span class="fn">check_edges</span>(<span class="kw">self</span>):
+        screen_rect = <span class="kw">self</span>.screen.get_rect()
+        <span class="kw">return</span> (<span class="kw">self</span>.rect.right &gt;= screen_rect.right
+            <span class="kw">or</span> <span class="kw">self</span>.rect.left &lt;= 0)
+
+    <span class="kw">def</span> <span class="fn">update</span>(<span class="kw">self</span>):
+        <span class="kw">self</span>.x += <span class="kw">self</span>.settings.alien_speed * <span class="kw">self</span>.settings.fleet_direction
+        <span class="kw">self</span>.rect.x = <span class="kw">self</span>.x
+      </div>
+
+      <h3 class="subsection-title">13.2 إنشاء أسطول الفضائيين</h3>
+      <p>نحتاج إلى إنشاء صفوف من الفضائيين تملأ عرض الشاشة. نحسب عدد الفضائيين الذين يمكن وضعهم في صف بناءً على عرض الشاشة وعرض الفضائي:</p>
+      <div class="code-block">
+<span class="kw">def</span> <span class="fn">_create_fleet</span>(<span class="kw">self</span>):
+    alien = Alien(<span class="kw">self</span>)
+    alien_width, alien_height = alien.rect.size
+    available_space_x = <span class="kw">self</span>.settings.screen_width - (2 * alien_width)
+    number_aliens_x = available_space_x // (2 * alien_width)
+
+    ship_height = <span class="kw">self</span>.ship.rect.height
+    available_space_y = (<span class="kw">self</span>.settings.screen_height -
+                        (3 * alien_height) - ship_height)
+    number_rows = available_space_y // (2 * alien_height)
+
+    <span class="kw">for</span> row_number <span class="kw">in</span> <span class="bu">range</span>(number_rows):
+        <span class="kw">for</span> alien_number <span class="kw">in</span> <span class="bu">range</span>(number_aliens_x):
+            <span class="kw">self</span>._create_alien(alien_number, row_number)
+      </div>
+
+      <h3 class="subsection-title">13.3 تحريك الأسطول</h3>
+      <p>يتحرك الأسطول بأكمله يميناً حتى يصل إلى حافة الشاشة، ثم ينزل للأسفل ويتجه لليسار. هذا يُعطي إحساساً بحركة منظمة تشبه لعبة Space Invaders الكلاسيكية.</p>
+      <p>المفتاح هو متغير <span class="inline-code">fleet_direction</span>: عندما يكون 1 يتحرك الأسطول لليمين، وعندما يكون -1 يتحرك لليسار. عندما يلمس أي فضائي حافة الشاشة، يتغير الاتجاه وينزل الأسطول للأسفل بمقدار <span class="inline-code">fleet_drop_speed</span>.</p>
+
+      <h3 class="subsection-title">13.4 إطلاق النار على الفضائيين والتصادمات</h3>
+      <p>عندما تطلق رصاصة وتصيب فضائياً، نحتاج إلى إزالة كليهما. يستخدم Pygame دوال التصادم المدمجة:</p>
+      <div class="code-block">
+<span class="kw">def</span> <span class="fn">_check_bullet_alien_collisions</span>(<span class="kw">self</span>):
+    collisions = pygame.sprite.groupcollide(
+        <span class="kw">self</span>.bullets, <span class="kw">self</span>.aliens, <span class="kw">True</span>, <span class="kw">True</span>)
+    <span class="kw">if</span> <span class="kw">not</span> <span class="kw">self</span>.aliens:
+        <span class="kw">self</span>.bullets.empty()
+        <span class="kw">self</span>._create_fleet()
+      </div>
+      <p><span class="inline-code">groupcollide()</span> تفحص التصادم بين مجموعتين. المعامل الثالث (<span class="inline-code">True</span>) يعني احذف الرصاصة عند التصادم، والرابع يعني احذف الفضائي. إذا تم تدمير كل الفضائيين، نُفرغ الرصاصات وننشئ أسطولاً جديداً (مستوى جديد).</p>
+
+      <h3 class="subsection-title">13.5 نهاية اللعبة</h3>
+      <p>تنتهي اللعبة عندما يصل فضائي إلى أسفل الشاشة أو عندما يصطدم فضائي بالسفينة. في هذه الحالة، نقلل عدد السفن المتاحة. إذا وصل العدد إلى صفر، تنتهي اللعبة:</p>
+      <div class="code-block">
+<span class="kw">def</span> <span class="fn">_check_aliens_bottom</span>(<span class="kw">self</span>):
+    screen_rect = <span class="kw">self</span>.screen.get_rect()
+    <span class="kw">for</span> alien <span class="kw">in</span> <span class="kw">self</span>.aliens.sprites():
+        <span class="kw">if</span> alien.rect.bottom &gt;= screen_rect.bottom:
+            <span class="kw">self</span>._ship_hit()
+            <span class="kw">break</span>
+      </div>
+
+      <h2 class="section-title">الفصل 14: تسجيل النقاط</h2>
+
+      <h3 class="subsection-title">14.1 زر اللعب (Play Button)</h3>
+      <p>نحتاج إلى شاشة بداية بسيطة تظهر للمستخدم قبل بدء اللعبة. ننشئ كلاس <span class="inline-code">Button</span> يرسم مستطيلاً مع نص:</p>
+      <div class="code-block">
+<span class="kw">class</span> <span class="fn">Button</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>, ai_game, msg):
+        <span class="kw">self</span>.screen = ai_game.screen
+        <span class="kw">self</span>.screen_rect = <span class="kw">self</span>.screen.get_rect()
+        <span class="kw">self</span>.width, <span class="kw">self</span>.height = 200, 50
+        <span class="kw">self</span>.button_color = (0, 255, 0)
+        <span class="kw">self</span>.text_color = (255, 255, 255)
+        <span class="kw">self</span>.font = pygame.font.SysFont(None, 48)
+        <span class="kw">self</span>.rect = pygame.Rect(0, 0, <span class="kw">self</span>.width, <span class="kw">self</span>.height)
+        <span class="kw">self</span>.rect.center = <span class="kw">self</span>.screen_rect.center
+        <span class="kw">self</span>._prep_msg(msg)
+
+    <span class="kw">def</span> <span class="fn">_prep_msg</span>(<span class="kw">self</span>, msg):
+        <span class="kw">self</span>.msg_image = <span class="kw">self</span>.font.render(msg, <span class="kw">True</span>,
+            <span class="kw">self</span>.text_color, <span class="kw">self</span>.button_color)
+        <span class="kw">self</span>.msg_image_rect = <span class="kw">self</span>.msg_image.get_rect()
+        <span class="kw">self</span>.msg_image_rect.center = <span class="kw">self</span>.rect.center
+
+    <span class="kw">def</span> <span class="fn">draw_button</span>(<span class="kw">self</span>):
+        <span class="kw">self</span>.screen.fill(<span class="kw">self</span>.button_color, <span class="kw">self</span>.rect)
+        <span class="kw">self</span>.screen.blit(<span class="kw">self</span>.msg_image, <span class="kw">self</span>.msg_image_rect)
+      </div>
+
+      <h3 class="subsection-title">14.2 مستويات الصعوبة المتزايدة</h3>
+      <p>مع كل مستوى جديد، نزيد سرعة اللعبة تدريجياً لجعلها أكثر تحدياً. نستخدم طريقة <span class="inline-code">increase_speed()</span> في كلاس الإعدادات:</p>
+      <div class="code-block">
+<span class="kw">def</span> <span class="fn">increase_speed</span>(<span class="kw">self</span>):
+    <span class="kw">self</span>.ship_speed *= <span class="kw">self</span>.speedup_scale
+    <span class="kw">self</span>.bullet_speed *= <span class="kw">self</span>.speedup_scale
+    <span class="kw">self</span>.alien_speed *= <span class="kw">self</span>.speedup_scale
+
+    <span class="kw">self</span>.alien_points = <span class="bu">int</span>(<span class="kw">self</span>.alien_points * <span class="kw">self</span>.score_scale)
+      </div>
+
+      <h3 class="subsection-title">14.3 لوحة النتائج (Scoreboard)</h3>
+      <p>نعرض النقاط الحالية وأعلى نتيجة والمستوى الحالي وعدد السفن المتبقية على الشاشة. نستخدم <span class="inline-code">pygame.font</span> لعرض النصوص:</p>
+      <div class="code-block">
+<span class="kw">class</span> <span class="fn">Scoreboard</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>, ai_game):
+        <span class="kw">self</span>.screen = ai_game.screen
+        <span class="kw">self</span>.screen_rect = <span class="kw">self</span>.screen.get_rect()
+        <span class="kw">self</span>.settings = ai_game.settings
+        <span class="kw">self</span>.stats = ai_game.stats
+
+        <span class="kw">self</span>.text_color = (30, 30, 30)
+        <span class="kw">self</span>.font = pygame.font.SysFont(None, 48)
+        <span class="kw">self</span>.prep_score()
+        <span class="kw">self</span>.prep_high_score()
+        <span class="kw">self</span>.prep_level()
+        <span class="kw">self</span>.prep_ships()
+
+    <span class="kw">def</span> <span class="fn">prep_score</span>(<span class="kw">self</span>):
+        score_str = <span class="bu">str</span>(<span class="kw">self</span>.stats.score)
+        <span class="kw">self</span>.score_image = <span class="kw">self</span>.font.render(score_str, <span class="kw">True</span>,
+            <span class="kw">self</span>.text_color, <span class="kw">self</span>.settings.bg_color)
+        <span class="kw">self</span>.score_rect = <span class="kw">self</span>.score_image.get_rect()
+        <span class="kw">self</span>.score_rect.right = <span class="kw">self</span>.screen_rect.right - 20
+        <span class="kw">self</span>.score_rect.top = 20
+
+    <span class="kw">def</span> <span class="fn">show_score</span>(<span class="kw">self</span>):
+        <span class="kw">self</span>.screen.blit(<span class="kw">self</span>.score_image, <span class="kw">self</span>.score_rect)
+        <span class="kw">self</span>.screen.blit(<span class="kw">self</span>.high_score_image, <span class="kw">self</span>.high_score_rect)
+        <span class="kw">self</span>.screen.blit(<span class="kw">self</span>.level_image, <span class="kw">self</span>.level_rect)
+        <span class="kw">self</span>.ships.draw(<span class="kw">self</span>.screen)
+      </div>
+
+      <h3 class="subsection-title">14.4 حفظ أعلى نتيجة</h3>
+      <p>نستخدم ملف JSON لحفظ أعلى نتيجة حتى تبقى محفوظة عند إغلاق اللعبة وإعادة فتحها:</p>
+      <div class="code-block">
+<span class="kw">import</span> json
+<span class="kw">from</span> pathlib <span class="kw">import</span> Path
+
+<span class="kw">def</span> <span class="fn">get_stored_high_score</span>():
+    path = Path(<span class="str">'high_score.json'</span>)
+    <span class="kw">if</span> path.exists():
+        contents = path.read_text()
+        <span class="kw">return</span> json.loads(contents)
+    <span class="kw">return</span> 0
+      </div>
+
+      <h2 class="section-title">هيكل اللعبة النهائي</h2>
+      <p>إليك الهيكل الكامل لملفات المشروع:</p>
+      <div class="code-block">
+alien_invasion/
+├── alien_invasion.py    <span class="cm"># الملف الرئيسي</span>
+├── settings.py          <span class="cm"># إعدادات اللعبة</span>
+├── ship.py              <span class="cm"># كلاس السفينة</span>
+├── bullet.py            <span class="cm"># كلاس الرصاصة</span>
+├── alien.py             <span class="cm"># كلاس الفضائي</span>
+├── game_stats.py        <span class="cm"># إحصائيات اللعبة</span>
+├── scoreboard.py        <span class="cm"># لوحة النتائج</span>
+├── button.py            <span class="cm"># زر اللعب</span>
+├── images/
+│   ├── ship.bmp         <span class="cm"># صورة السفينة</span>
+│   └── alien.bmp        <span class="cm"># صورة الفضائي</span>
+└── high_score.json      <span class="cm"># أعلى نتيجة (ملف تلقائي)</span>
+      </div>
+
+      <h2 class="section-title">التمارين</h2>
+
+      <div class="exercise"><strong>تمرين 12-1: سماء زرقاء</strong><br>
+      أنشئ نافذة Pygame بخلفية زرقاء. أضف حلقة ألعاب رئيسية وأحداث للخروج.</div>
+
+      <div class="exercise"><strong>تمرين 12-2: شخصية اللعبة</strong><br>
+      جرب استخدام صورة مختلفة للسفينة. مثلاً استخدم صورة صاروخ أو طائرة بدلاً من السفينة.</div>
+
+      <div class="exercise"><strong>تمرين 12-6: الرصاص على الجانبين</strong><br>
+      عدّل الكود بحيث تطلق السفينة رصاصات إلى اليسار واليمين أيضاً عند ضغط مفاتيح إضافية.</div>
+
+      <div class="exercise"><strong>تمرين 13-1: النجوم</strong><br>
+      أنشئ شاشة بها نجوم عشوائية في الخلفية باستخدام نفس منطق إنشاء أسطول الفضائيين.</div>
+
+      <div class="exercise"><strong>تمرين 13-4: أمطار</strong><br>
+      اجعل الرصاص يسقط من أعلى الشاشة (مطر) بدلاً من أن تطلقه السفينة.</div>
+
+      <div class="exercise"><strong>تمرين 14-1: الضغط على P للعب</strong><br>
+      أضف إمكانية بدء اللعبة بالضغط على حرف P بدلاً من النقر على زر الفأرة.</div>
+
+      <div class="exercise"><strong>تمرين 14-7: توسيع اللعبة</strong><br>
+      أضف عناصر جديدة للعبة مثل عوائق (حجارة) أو أعداء إضافيين أو أسلحة خاصة.</div>
+
+      <h2 class="section-title">المفاهيم الرئيسية</h2>
+      <div class="summary-box">
+        <h3>📝 المفاهيم التي تعلمتها في هذا المشروع</h3>
+        <ul>
+          <li><strong>Pygame:</strong> مكتبة لبناء ألعاب فيديو ثنائية الأبعاد بلغة بايثون</li>
+          <li><strong>حلقة اللعبة الرئيسية (Game Loop):</strong> الحلقة التي تدير أحداث اللعبة وتحديثاتها باستمرار</li>
+          <li><strong>الأحداث (Events):</strong> تفاعلات المستخدم مثل الضغط على المفاتيح أو النقر بالماوس</li>
+          <li><strong>كلاس Sprite:</strong> كلاس أساسي في Pygame لتمثيل الكائنات المرئية</li>
+          <li><strong>المجموعات (Groups):</strong> لتجميع وإدارة الكائنات المتشابهة (مثل الرصاص والفضائيين)</li>
+          <li><strong>اكتشاف التصادم (Collision Detection):</strong> اكتشاف متى يتصادم كائنان باستخدام <span class="inline-code">groupcollide()</span> و <span class="inline-code">spritecollideany()</span></li>
+          <li><strong>مستويات الصعوبة:</strong> زيادة سرعة اللعبة تدريجياً مع كل مستوى جديد</li>
+          <li><strong>حفظ البيانات:</strong> استخدام JSON لحفظ أعلى نتيجة بين جلسات اللعب</li>
+        </ul>
+      </div>
+
+      <div class="note"><strong>نصيحة ختامية:</strong> لا تتوقف عند الكود الموجود في الكتاب. جرب إضافة ميزاتك الخاصة! أضف أصواتاً للمؤثرات، غيّر ألوان الخلفية، أو أنشئ أنواعاً جديدة من الفضائيين. أفضل طريقة للتعلم هي تعديل الكود وتجربة أفكار جديدة.</div>
+
+      <div style="text-align:center;margin:40px 0;">
+        <a href="../index.html" style="display:inline-block;background:var(--secondary);color:#fff;padding:12px 30px;border-radius:8px;text-decoration:none;font-size:16px;">العودة إلى الرئيسية</a>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      <p>دورة بايثون المكثفة - ترجمة وتعريب بناءً على كتاب Python Crash Course بقلم Eric Matthes</p>
+      <p style="margin-top:5px;">جميع أكواد بايثون محفوظة بحقوقها &copy; No Starch Press</p>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docker - الحاويات - دورة بايثون المكثفة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle">☰</button>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h1>🐍 دورة بايثون المكثفة</h1>
+    <p>Python Crash Course</p>
+  </div>
+  <nav class="sidebar-nav" id="sidebarNav">
+    <a href="../index.html" style="font-weight:600;color:#ffd166;">🏠 الرئيسية</a>
+    <a href="../roadmap.html" style="font-weight:600;color:#00d4ff;">🗺️ الخطة — حسب الدروس</a>
+    <div class="part-label">📘 الجزء الأول: الأساسيات</div>
+    <a href="chapter1.html" class="chapter-link">1. البدء مع بايثون</a>
+    <a href="chapter2.html" class="chapter-link">2. المتغيرات وأنواع البيانات البسيطة</a>
+    <a href="chapter3.html" class="chapter-link">3. مقدمة إلى القوائم</a>
+    <a href="chapter4.html" class="chapter-link">4. التعامل مع القوائم</a>
+    <a href="chapter5.html" class="chapter-link">5. جمل if</a>
+    <a href="chapter6.html" class="chapter-link">6. القواميس</a>
+    <a href="chapter7.html" class="chapter-link">7. إدخال المستخدم وحلقات while</a>
+    <a href="chapter8.html" class="chapter-link">8. الدوال</a>
+    <a href="chapter9.html" class="chapter-link">9. الكلاسات</a>
+    <a href="chapter10.html" class="chapter-link">10. الملفات والاستثناءات</a>
+    <a href="chapter11.html" class="chapter-link">11. اختبار الكود</a>
+    <div class="part-label">⚙️ Core Engineering</div>
+    <a href="python_advanced.html" class="chapter-link">🐍 Python Advanced</a>
+    <a href="asyncio.html" class="chapter-link">AsyncIO - البرمجة غير المتزامنة</a>
+    <a href="sql.html" class="chapter-link">SQL - قواعد البيانات</a>
+    <a href="postgresql.html" class="chapter-link">PostgreSQL متقدم</a>
+    <a href="linux.html" class="chapter-link">Linux - سطر الأوامر</a>
+    <a href="git.html" class="chapter-link">Git/GitHub - التحكم بالنسخ</a>
+    <a href="docker.html" class="chapter-link" style="color:#ffd166;font-weight:700;">Docker - الحاويات</a>
+    <div class="part-label">🚀 Backend + AI</div>
+    <a href="fastapi.html" class="chapter-link">FastAPI - تطبيقات الويب</a>
+    <a href="redis.html" class="chapter-link">Redis - التخزين المؤقت</a>
+    <a href="ai_fundamentals.html" class="chapter-link">🤖 أساسيات الذكاء الاصطناعي</a>
+    <div class="part-label">🧠 Agent Engineering</div>
+    <a href="rag.html" class="chapter-link">RAG - التوليد المعزز بالاسترجاع</a>
+    <a href="vector_databases.html" class="chapter-link">Vector Databases - Qdrant</a>
+    <a href="ollama.html" class="chapter-link">Ollama - النماذج المحلية</a>
+    <a href="langchain.html" class="chapter-link">LangChain - بناء تطبيقات LLM</a>
+    <a href="langgraph.html" class="chapter-link">LangGraph - الرسوم البيانية</a>
+    <a href="agents.html" class="chapter-link">🤖 وكلاء الذكاء الاصطناعي</a>
+    <div class="part-label">⚙️ MLOps Foundations</div>
+    <a href="mlflow.html" class="chapter-link">MLflow - تتبع التجارب</a>
+    <a href="cicd.html" class="chapter-link">CI/CD - GitHub Actions</a>
+    <a href="aws.html" class="chapter-link">AWS - EC2 + S3 + IAM</a>
+    <div class="part-label">🔷 مواضيع متقدمة</div>
+    <a href="oop.html" class="chapter-link">🔷 البرمجة كائنية التوجه OOP</a>
+    <div class="part-label">🚀 المشاريع - السنة الأولى</div>
+    <a href="project1.html" class="chapter-link">المشروع 1: غزو الفضائيين</a>
+    <a href="project2.html" class="chapter-link">المشروع 2: تصور البيانات</a>
+    <a href="project3.html" class="chapter-link">المشروع 3: تطبيقات الويب</a>
+    <a href="project_data_api.html" class="chapter-link">المشروع 4: Data API Platform</a>
+    <a href="project_ai_doc_chat.html" class="chapter-link">المشروع 5: AI Document Chat</a>
+    <a href="project_ai_platform.html" class="chapter-link">المشروع 6: AI Platform Deployment</a>
+    <div class="part-label">🧠 السنة الثانية - Advanced AI</div>
+    <a href="multi_agents.html" class="chapter-link">🧠 أنظمة Multi-Agent</a>
+    <a href="websockets.html" class="chapter-link">WebSockets بعمق</a>
+    <a href="message_queues.html" class="chapter-link">Message Queues - Redis/Celery</a>
+    <a href="event_driven.html" class="chapter-link">Event-Driven Architecture</a>
+    <a href="streaming_llm.html" class="chapter-link">Streaming - استجابات LLM</a>
+    <a href="specialized_agents.html" class="chapter-link">وكلاء متخصصون - Research/Review</a>
+    <a href="project_ai_research.html" class="chapter-link">مشروع: Multi-Agent Research</a>
+    <div class="part-label">🏗️ السنة الثانية — Infrastructure</div>
+    <a href="kubernetes.html" class="chapter-link">Kubernetes + Helm</a>
+    <a href="observability.html" class="chapter-link">Observability - Monitoring</a>
+    <a href="infra_dashboard.html" class="chapter-link">مشروع: AI Infra Dashboard</a>
+    <a href="security_perf.html" class="chapter-link">Security + Performance</a>
+    <div class="part-label">🚀 السنة الثانية — Career</div>
+    <a href="code_quality.html" class="chapter-link">إعادة هيكلة + جودة الكود</a>
+    <a href="career_digital.html" class="chapter-link">الظهور الرقمي + LinkedIn</a>
+    <a href="interview_prep.html" class="chapter-link">الاستعداد للمقابلات</a>
+    <a href="career_launch.html" class="chapter-link">إطلاق + Freelance</a>
+    <div class="part-label">📎 تمارين إضافية</div>
+    <a href="exercises.html" class="chapter-link">📝 تمارين + حلول</a>
+    <div class="part-label">📎 الملاحق</div>
+    <a href="appendices.html" class="chapter-link">الملاحق أ-د</a>
+  </nav>
+</div>
+
+<div class="main-content">
+  <div class="chapter-page">
+    <div class="chapter-header">
+      <span class="part-badge">⚙️ Core Engineering</span>
+      <h1>Docker — الحاويات والنشر</h1>
+      <p>بناء، تشغيل، ونشر التطبيقات باستخدام الحاويات</p>
+    </div>
+    <div class="chapter-content">
+
+      <a href="../index.html" class="back-link">← العودة إلى الرئيسية</a>
+
+      <p>
+        <strong>Docker</strong> يسمح لك بتغليف التطبيق مع جميع اعتمادياته في حاوية خفيفة وقابلة للنقل.
+        الحاويات تعمل بنفس الطريقة في أي بيئة — من لابتوبك إلى السيرفر.
+      </p>
+
+      <div class="note">
+        <strong>تثبيت Docker:</strong><br>
+        <span class="inline-code">sudo apt install docker.io</span> (Linux) |
+        <span class="inline-code">brew install --cask docker</span> (macOS) |
+        تحميل من <span class="inline-code">docker.com</span> (Windows)
+      </div>
+
+      <h2 class="section-title">1. Dockerfile — وصف الحاوية</h2>
+
+      <p>Dockerfile هو ملف نصي يصف كيفية بناء صورة الحاوية (image). كل سطر فيه هو تعليمة (instruction) تُنفّذ بالترتيب. الصورة الناتجة تحتوي على كل ما تحتاجه لتشغيل التطبيق: نظام تشغيل، مكتبات، كود، وإعدادات.</p>
+
+      <div class="code-block">
+<span class="cm"># Dockerfile — لتطبيق FastAPI</span>
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+      </div>
+
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> FROM: نبدأ من صورة أساسية (python:3.11-slim — نسخة مصغرة من بايثون). WORKDIR: نحدد مجلد العمل داخل الحاوية. COPY: ننسخ الملفات من جهازك للحاوية (ننسخ requirements أولاً ثم نشغل pip للاستفادة من الـ caching). RUN: ننفذ أوامر (تثبيت المكتبات). EXPOSE: نُعلن أن التطبيق يستخدم المنفذ 8000. CMD: الأمر الذي يُشغّل عند بدء الحاوية.</div>
+
+      <div class="code-block">
+<span class="cm"># requirements.txt</span>
+fastapi
+uvicorn
+redis
+psycopg2-binary
+      </div>
+
+      <h2 class="section-title">2. بناء وتشغيل الحاوية</h2>
+
+      <p>بعد كتابة Dockerfile، نستخدم أوامر Docker لبناء الصورة وتشغيل الحاوية. عملية البناء تُنشئ صورة (image) — وهي قالب ثابت. تشغيل الحاوية (container) يُنشئ نسخة قابلة للتشغيل من تلك الصورة.</p>
+
+      <div class="code-block">
+<span class="cm"># بناء الصورة</span>
+docker build -t my-fastapi-app .
+
+<span class="cm"># تشغيل الحاوية</span>
+docker run -d --name my-app -p 8000:8000 my-fastapi-app
+
+<span class="cm"># أوامر مفيدة</span>
+docker ps              <span class="cm"># الحاويات العاملة</span>
+docker ps -a           <span class="cm"># جميع الحاويات</span>
+docker logs my-app     <span class="cm"># السجلات</span>
+docker exec -it my-app /bin/bash  <span class="cm"># دخول الحاوية</span>
+docker stop my-app     <span class="cm"># إيقاف</span>
+docker rm my-app       <span class="cm"># حذف</span>
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> docker build -t my-fastapi-app . يبني الصورة من الـ Dockerfile في المجلد الحالي (-t للاسم). docker run -d يشتغل الحاوية في الخلفية (detached) مع تعيين اسم (--name) وربط المنفذ 8000 المحلي بـ 8000 في الحاوية. docker exec -it يدخل الحاوية بتفاعل (bash). docker logs يعرض السجلات — مفيد جداً لتصحيح الأخطاء.</div>
+
+      <h2 class="section-title">3. Docker Compose — تطبيقات متعددة الخدمات</h2>
+
+      <p>عندما يحتاج تطبيقك إلى أكثر من خدمة (مثل FastAPI + PostgreSQL + Redis)، إدارة كل حاوية على حدة تصبح معقدة. Docker Compose يسمح لك بتعريف كل الخدمات في ملف YAML واحد، وتشغيلها بأمر واحد.</p>
+
+      <div class="code-block">
+<span class="cm"># docker-compose.yml</span>
+<span class="kw">version</span>: <span class="str">'3.8'</span>
+
+<span class="kw">services</span>:
+  app:
+    build: .
+    ports:
+      - <span class="str">"8000:8000"</span>
+    depends_on:
+      - db
+      - redis
+    environment:
+      - DATABASE_URL=postgresql://user:pass@db:5432/mydb
+      - REDIS_URL=redis://redis:6379/0
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: mydb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+
+<span class="kw">volumes</span>:
+  postgres_data:
+      </div>
+
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> نعرّف 3 خدمات: app (تطبيقنا)، db (PostgreSQL)، redis (Redis). depends_on يضمن أن db و redis يبدآن قبل app. environment يُمرّر متغيرات البيئة — لاحظ أن اسم المضيف (host) هو اسم الخدمة (db, redis). volumes تحفظ بيانات PostgreSQL خارج الحاوية حتى لا تُفقد عند إعادة التشغيل.</div>
+
+      <div class="code-block">
+<span class="cm"># تشغيل كل الخدمات</span>
+docker-compose up -d
+
+<span class="cm"># إيقاف</span>
+docker-compose down
+
+<span class="cm"># إعادة بناء</span>
+docker-compose up -d --build
+      </div>
+      <p>docker-compose up -d يبني ويشغّل كل الخدمات في الخلفية. docker-compose down يوقف ويحذف كل الحاويات (لكن يحتفظ بالبيانات لأنها في volume). --build يُعيد بناء الصور قبل التشغيل — استخدمه عندما تغيّر الكود.</p>
+
+      <h2 class="section-title">4. أفضل الممارسات</h2>
+
+      <ul>
+        <li><strong>Multi-stage builds</strong>: استخدم مراحل متعددة لتقليل حجم الصورة</li>
+        <li><strong>.dockerignore</strong>: استبعد الملفات غير الضرورية (مثل <span class="inline-code">__pycache__</span>, <span class="inline-code">.git</span>)</li>
+        <li><strong>استخدم images رسمية</strong>: مثل <span class="inline-code">python:3.11-slim</span> بدلاً من <span class="inline-code">python:3.11</span> (أصغر حجماً)</li>
+        <li><strong>لا تشغل كـ root</strong>: أضف مستخدم غير privileged</li>
+      </ul>
+
+      <div class="code-block">
+<span class="cm"># Multi-stage build مثال</span>
+<span class="cm"># المرحلة الأولى: بناء</span>
+FROM python:3.11-slim AS builder
+COPY requirements.txt .
+RUN pip install --user -r requirements.txt
+
+<span class="cm"># المرحلة الثانية: تشغيل</span>
+FROM python:3.11-slim
+COPY --from=builder /root/.local /root/.local
+COPY . .
+ENV PATH=/root/.local/bin:$PATH
+USER 1000
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0"]
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> Multi-stage build: المرحلة الأولى (builder) تُثبّت المكتبات، والمرحلة الثانية تنسخ منها فقط الملفات الناتجة (ليس الـ layer cache كاملاً). هذا يُقلص حجم الصورة النهائية بشكل كبير — لأن الأدوات الوسيطة (pip cache, compiler) لا تنتقل للمرحلة الثانية. USER 1000 يُشغّل التطبيق بمستخدم غير root للأمان.</div>
+
+      <h2 class="section-title">5. Docker Networking</h2>
+
+      <p>الشبكات في Docker تسمح للحاويات بالتواصل مع بعضها البعض. كل حاوية على نفس الشبكة يمكنها الوصول للأخرى باستخدام اسم الحاوية كـ hostname — هذا أفضل من استخدام عناوين IP التي قد تتغير.</p>
+
+      <div class="code-block">
+<span class="cm"># إنشاء شبكة</span>
+docker network create my-network
+
+<span class="cm"># تشغيل حاويات على نفس الشبكة</span>
+docker run -d --name redis --network my-network redis:7-alpine
+docker run -d --name app --network my-network -p 8000:8000 my-fastapi-app
+
+<span class="cm"># في الكود، استخدم اسم الحاوية كـ hostname</span>
+<span class="cm"># redis_client = redis.Redis(host='redis', port=6379)</span>
+      </div>
+      <p>باستخدام --network، كل الحاويات على نفس الشبكة يمكنها رؤية بعضها بأسمائها. في كود بايثون، استخدم host='redis' (اسم الحاوية) بدلاً من localhost. هذا النمط يُستخدم تلقائياً في Docker Compose.</p>
+
+      <h2 class="section-title">6. Docker Volumes — البيانات الدائمة</h2>
+
+      <p>الحاويات ephemeral — أي تغيير داخل الحاوية يُفقد عند حذفها. Volumes تحل هذه المشكلة بتخزين البيانات خارج الحاوية على جهاز المضيف. هذا ضروري لقواعد البيانات، الملفات، والسجلات.</p>
+
+      <div class="code-block">
+<span class="cm"># Named volume (يديره Docker)</span>
+docker run -v postgres_data:/var/lib/postgresql/data postgres:15
+
+<span class="cm"># Bind mount (مجلد محلي)</span>
+docker run -v $(pwd)/data:/app/data my-app
+
+<span class="cm"># مشاركة الملفات بين الحاوية والمضيف</span>
+docker run -v $(pwd)/logs:/app/logs my-app
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> Named volume (postgres_data): Docker يُدير المجلد — أين يقع على المضيف لا يهمك، فقط استخدم الاسم. Bind mount ($(pwd)/data): تربط مجلداً محدداً على جهازك بمجلد في الحاوية — مفيد للتطوير (تعدّل الكود على جهازك والحاوية تراها فوراً). الفرق: named volumes أسهل للإدارة، bind mounts أسرع للتطوير.</div>
+
+      <h2 class="section-title">7. التمارين</h2>
+
+      <div class="exercise">
+        <strong>تمرين 1: حاوية FastAPI</strong><br>
+        أنشئ Dockerfile لتطبيق FastAPI بسيط، ابنِ الصورة، وشغّلها على منفذ 8000.
+      </div>
+
+      <div class="exercise">
+        <strong>تمرين 2: Docker Compose</strong><br>
+        أضف PostgreSQL و Redis إلى تطبيقك باستخدام docker-compose.yml.
+      </div>
+
+      <div class="exercise">
+        <strong>تمرين 3: Multi-stage</strong><br>
+        حول Dockerfile الخاص بك إلى multi-stage build وقلل حجم الصورة إلى أقل من 200MB.
+      </div>
+
+      <div class="summary-box">
+        <h3>📝 ملخص Docker</h3>
+        <ul>
+          <li><strong>Dockerfile</strong>: يصف كيفية بناء الصورة</li>
+          <li><strong>docker build / run</strong>: بناء وتشغيل الحاويات</li>
+          <li><strong>Docker Compose</strong>: تشغيل عدة خدمات معاً</li>
+          <li><strong>Volumes</strong>: حفظ البيانات خارج الحاوية</li>
+          <li><strong>Networks</strong>: ربط الحاويات ببعضها</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

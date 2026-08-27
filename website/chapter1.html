@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الفصل 1: البدء مع بايثون - دورة بايثون المكثفة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="sidebar-toggle" id="sidebarToggle">☰</button>
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h1>🐍 دورة بايثون المكثفة</h1>
+    <p>Python Crash Course</p>
+  </div>
+  <nav class="sidebar-nav" id="sidebarNav">
+    <a href="../index.html" style="font-weight:600;color:#ffd166;">🏠 الرئيسية</a>
+    <a href="../roadmap.html" style="font-weight:600;color:#00d4ff;">🗺️ الخطة — حسب الدروس</a>
+    <div class="part-label">📘 الجزء الأول: الأساسيات</div>
+    <a href="chapter1.html" class="chapter-link" style="color:#ffd166;font-weight:700;">1. البدء مع بايثون</a>
+    <a href="chapter2.html" class="chapter-link">2. المتغيرات وأنواع البيانات البسيطة</a>
+    <a href="chapter3.html" class="chapter-link">3. مقدمة إلى القوائم</a>
+    <a href="chapter4.html" class="chapter-link">4. التعامل مع القوائم</a>
+    <a href="chapter5.html" class="chapter-link">5. جمل if</a>
+    <a href="chapter6.html" class="chapter-link">6. القواميس</a>
+    <a href="chapter7.html" class="chapter-link">7. إدخال المستخدم وحلقات while</a>
+    <a href="chapter8.html" class="chapter-link">8. الدوال</a>
+    <a href="chapter9.html" class="chapter-link">9. الكلاسات</a>
+    <a href="chapter10.html" class="chapter-link">10. الملفات والاستثناءات</a>
+    <a href="chapter11.html" class="chapter-link">11. اختبار الكود</a>
+    <div class="part-label">⚙️ Core Engineering</div>
+    <a href="python_advanced.html" class="chapter-link">🐍 Python Advanced</a>
+    <a href="asyncio.html" class="chapter-link">AsyncIO - البرمجة غير المتزامنة</a>
+    <a href="sql.html" class="chapter-link">SQL - قواعد البيانات</a>
+    <a href="postgresql.html" class="chapter-link">PostgreSQL متقدم</a>
+    <a href="linux.html" class="chapter-link">Linux - سطر الأوامر</a>
+    <a href="git.html" class="chapter-link">Git/GitHub - التحكم بالنسخ</a>
+    <a href="docker.html" class="chapter-link">Docker - الحاويات</a>
+    <div class="part-label">🚀 Backend + AI</div>
+    <a href="fastapi.html" class="chapter-link">FastAPI - تطبيقات الويب</a>
+    <a href="redis.html" class="chapter-link">Redis - التخزين المؤقت</a>
+    <a href="ai_fundamentals.html" class="chapter-link">🤖 أساسيات الذكاء الاصطناعي</a>
+    <div class="part-label">🧠 Agent Engineering</div>
+    <a href="rag.html" class="chapter-link">RAG - التوليد المعزز بالاسترجاع</a>
+    <a href="vector_databases.html" class="chapter-link">Vector Databases - Qdrant</a>
+    <a href="ollama.html" class="chapter-link">Ollama - النماذج المحلية</a>
+    <a href="langchain.html" class="chapter-link">LangChain - بناء تطبيقات LLM</a>
+    <a href="langgraph.html" class="chapter-link">LangGraph - الرسوم البيانية</a>
+    <a href="agents.html" class="chapter-link">🤖 وكلاء الذكاء الاصطناعي</a>
+    <div class="part-label">⚙️ MLOps Foundations</div>
+    <a href="mlflow.html" class="chapter-link">MLflow - تتبع التجارب</a>
+    <a href="cicd.html" class="chapter-link">CI/CD - GitHub Actions</a>
+    <a href="aws.html" class="chapter-link">AWS - EC2 + S3 + IAM</a>
+    <div class="part-label">🔷 مواضيع متقدمة</div>
+    <a href="oop.html" class="chapter-link">🔷 البرمجة كائنية التوجه OOP</a>
+    <div class="part-label">🚀 المشاريع - السنة الأولى</div>
+    <a href="project1.html" class="chapter-link">المشروع 1: غزو الفضائيين</a>
+    <a href="project2.html" class="chapter-link">المشروع 2: تصور البيانات</a>
+    <a href="project3.html" class="chapter-link">المشروع 3: تطبيقات الويب</a>
+    <a href="project_data_api.html" class="chapter-link">المشروع 4: Data API Platform</a>
+    <a href="project_ai_doc_chat.html" class="chapter-link">المشروع 5: AI Document Chat</a>
+    <a href="project_ai_platform.html" class="chapter-link">المشروع 6: AI Platform Deployment</a>
+    <div class="part-label">🧠 السنة الثانية - Advanced AI</div>
+    <a href="multi_agents.html" class="chapter-link">🧠 أنظمة Multi-Agent</a>
+    <a href="websockets.html" class="chapter-link">WebSockets بعمق</a>
+    <a href="message_queues.html" class="chapter-link">Message Queues - Redis/Celery</a>
+    <a href="event_driven.html" class="chapter-link">Event-Driven Architecture</a>
+    <a href="streaming_llm.html" class="chapter-link">Streaming - استجابات LLM</a>
+    <a href="specialized_agents.html" class="chapter-link">وكلاء متخصصون - Research/Review</a>
+    <a href="project_ai_research.html" class="chapter-link">مشروع: Multi-Agent Research</a>
+    <div class="part-label">🏗️ السنة الثانية — Infrastructure</div>
+    <a href="kubernetes.html" class="chapter-link">Kubernetes + Helm</a>
+    <a href="observability.html" class="chapter-link">Observability - Monitoring</a>
+    <a href="infra_dashboard.html" class="chapter-link">مشروع: AI Infra Dashboard</a>
+    <a href="security_perf.html" class="chapter-link">Security + Performance</a>
+    <div class="part-label">🚀 السنة الثانية — Career</div>
+    <a href="code_quality.html" class="chapter-link">إعادة هيكلة + جودة الكود</a>
+    <a href="career_digital.html" class="chapter-link">الظهور الرقمي + LinkedIn</a>
+    <a href="interview_prep.html" class="chapter-link">الاستعداد للمقابلات</a>
+    <a href="career_launch.html" class="chapter-link">إطلاق + Freelance</a>
+    <div class="part-label">📎 تمارين إضافية</div>
+    <a href="exercises.html" class="chapter-link">📝 تمارين + حلول</a>
+    <div class="part-label">📎 الملاحق</div>
+    <a href="appendices.html" class="chapter-link">الملاحق أ-د</a>
+  </nav>
+</div>
+
+<div class="main-content">
+  <div class="chapter-page">
+    <div class="chapter-header">
+      <span class="part-badge">📘 الجزء الأول: الأساسيات</span>
+      <h1>1. البدء مع بايثون</h1>
+      <p>في هذا الفصل، ستتعلم كيفية تثبيت بايثون على جهازك، تشغيل أول برنامج لك، والتعامل مع الأخطاء البرمجية</p>
+    </div>
+    <div class="chapter-content">
+
+      <a href="../index.html" class="back-link">← العودة إلى الرئيسية</a>
+
+      <p>مرحباً بك في عالم البرمجة بلغة بايثون! في هذا الفصل، سنبدأ من الصفر. سنقوم بتثبيت بايثون على جهاز الكمبيوتر الخاص بك، ثم نكتب أول برنامج بسيط، ونتعرف على كيفية التعامل مع الأخطاء التي قد تواجهها كمبرمج مبتدئ. لا تقلق إذا كنت جديداً تماماً في البرمجة — فهذا الفصل صُمم خصيصاً لك.</p>
+
+      <div class="objectives">
+        <h3>🎯 أهداف التعلم في هذا الفصل</h3>
+        <ul>
+          <li>تثبيت بايثون على نظامك ( Windows / macOS / Linux ) والتأكد من نجاح التثبيت.</li>
+          <li>كتابة وتشغيل أول برنامج: <code>print("Hello World!")</code>.</li>
+          <li>فهم الفرق بين أخطاء النحو (SyntaxError) وأخطاء وقت التشغيل (Runtime Errors).</li>
+          <li>استخدام الطرفية التفاعلية (Interactive Shell) لتجربة الأوامر بسرعة.</li>
+          <li>قراءة رسائل الخطأ وفهمها بدل الخوف منها.</li>
+        </ul>
+      </div>
+
+      <div class="callout-big">
+        <div class="ico">🐍</div>
+        <h3>نصيحة قبل البدء</h3>
+        <p>جهّز بيئة العمل مسبقاً: ثبّت بايثون ونصّب محرراً مثل VS Code قبل المتابعة، حتى تتمكن من تنفيذ الأمثلة فوراً ولا تكتفي بالقراءة.</p>
+      </div>
+
+      <h2 class="section-title">1.1 إعداد بيئة بايثون</h2>
+      <p>قبل أن نبدأ في كتابة الكود، نحتاج إلى تثبيت بايثون على جهاز الكمبيوتر. بايثون هي لغة برمجة مفتوحة المصدر ومتوفرة مجاناً لجميع أنظمة التشغيل الرئيسية.</p>
+      <p>النسخة الحالية المستقرة من بايثون هي النسخة 3.x. في هذا الكتاب، سنستخدم بايثون 3، حيث أن بايثون 2 لم تعد مدعومة رسمياً منذ يناير 2020.</p>
+
+      <h3 class="subsection-title">1.1.1 تثبيت بايثون على نظام Windows</h3>
+      <p>لتثبيت بايثون على ويندوز:</p>
+      <ol>
+        <li>اذهب إلى الموقع الرسمي <a href="https://python.org" target="_blank" rel="noopener">python.org</a></li>
+        <li>حمل أحدث نسخة من بايثون 3 (ستجد زر تحميل كبير في الصفحة الرئيسية)</li>
+        <li>شغّل ملف التثبيت الذي حملته</li>
+        <li><strong>مهم جداً:</strong> تأكد من تحديد خيار <span class="inline-code">Add Python to PATH</span> قبل الضغط على Install</li>
+        <li>اتبع التعليمات الظاهرة على الشاشة لإكمال التثبيت</li>
+      </ol>
+      <p>بعد التثبيت، يمكنك فتح <strong>موجه الأوامر (Command Prompt)</strong> وكتابة <span class="inline-code">python --version</span> للتأكد من أن التثبيت تم بنجاح.</p>
+
+      <h3 class="subsection-title">1.1.2 تثبيت بايثون على نظام macOS</h3>
+      <p>نظام macOS يأتي مع بايثون 2 مثبتاً مسبقاً، لكننا نحتاج بايثون 3. لديك خياران:</p>
+      <p><strong>الخيار الأول:</strong> حمل المثبت من <a href="https://python.org" target="_blank" rel="noopener">python.org</a> كما في ويندوز وشغّله.</p>
+      <p><strong>الخيار الثاني:</strong> استخدم <strong>Homebrew</strong> (مدير حزم لنظام macOS) لتثبيت بايثون بسهولة:</p>
+      <div class="code-block">
+<span class="cm"># تثبيت بايثون عبر Homebrew</span>
+brew install python3
+      </div>
+      <p>بعد التثبيت، اكتب <span class="inline-code">python3 --version</span> في الطرفية (Terminal) للتأكد.</p>
+
+      <h3 class="subsection-title">1.1.3 تثبيت بايثون على نظام Linux</h3>
+      <p>معظم توزيعات لينكس تأتي مع بايثون 3 مثبتاً مسبقاً. يمكنك التحقق بكتابة الأمر التالي في الطرفية:</p>
+      <div class="code-block">
+python3 --version
+      </div>
+      <p>إذا لم يكن بايثون 3 مثبتاً، يمكنك تثبيته باستخدام مدير الحزم الخاص بتوزيعتك:</p>
+      <div class="code-block">
+<span class="cm"># على Ubuntu/Debian</span>
+sudo apt update
+sudo apt install python3
+
+<span class="cm"># على Fedora</span>
+sudo dnf install python3
+      </div>
+
+      <div class="note"><strong>ملاحظة:</strong> في نظامي macOS و Linux، قد تحتاج إلى كتابة <span class="inline-code">python3</span> بدلاً من <span class="inline-code">python</span> لتشغيل بايثون 3. في ويندوز، يمكنك استخدام <span class="inline-code">python</span> مباشرة.</div>
+
+      <h3 class="subsection-title">1.1.4 محرر النصوص ومحرر الكود</h3>
+      <p>لكتابة كود بايثون، تحتاج إلى محرر نصوص. هناك عدة خيارات ممتازة:</p>
+      <ul>
+        <li><strong>VS Code:</strong> محرر مجاني وقوي من مايكروسوفت، مع إضافات ممتازة لبايثون</li>
+        <li><strong>PyCharm:</strong> بيئة تطوير متكاملة (IDE) مخصصة لبايثون</li>
+        <li><strong>Sublime Text:</strong> محرر خفيف وسريع</li>
+        <li><strong>IDLE:</strong> محرر بايثون البسيط الذي يأتي مع تثبيت بايثون</li>
+      </ul>
+      <p>لن نستخدم بيئة تطوير متكاملة معقدة في البداية. يكفينا محرر نصوص بسيط مثل VS Code أو حتى "المفكرة" (Notepad) على ويندوز.</p>
+
+      <h2 class="section-title">1.2 تشغيل أول برنامج بايثون — Hello World!</h2>
+      <p>حان الوقت لكتابة أول برنامج لك في بايثون! تقليدياً، أول برنامج نكتبه في أي لغة برمجة يطبع جملة "Hello World!".</p>
+
+      <h3 class="subsection-title">1.2.1 إنشاء ملف البرنامج</h3>
+      <p>افتح محرر النصوص الخاص بك وأنشئ ملفاً جديداً. اكتب السطر التالي فيه:</p>
+      <div class="code-block">
+<div class="code-title">hello.py<span class="dots"><i></i><i></i><i></i></span></div>
+<span class="bu">print</span>(<span class="str">"Hello World!"</span>)
+      </div>
+
+      <div class="term">Hello World!</div>
+
+      <div class="explanation-box">
+        <strong>🔍 شرح الكود بالتفصيل:</strong>
+        <p>يحتوي هذا البرنامج على سطر واحد فقط من كود بايثون. الدالة <code>print()</code> هي دالة مدمجة في بايثون تقوم بطباعة أي شيء يوضع بين قوسيها إلى الشاشة. هنا نمرر لها السلسلة النصية <code>"Hello World!"</code> — وهي مجموعة من الأحرف محاطة بعلامتي اقتباس مزدوجتين. عند تشغيل الملف <code>hello_world.py</code>، سينفذ بايثون هذا السطر ويخرج النص <code>Hello World!</code> في الطرفية. هذه هي الطريقة الأساسية لعرض المعلومات في بايثون.</p>
+      </div>
+
+      <p>احفظ الملف باسم <span class="inline-code">hello_world.py</span>. امتداد <span class="inline-code">.py</span> يدل على أن هذا الملف هو ملف كود بايثون.</p>
+
+      <h3 class="subsection-title">1.2.2 تشغيل البرنامج من الطرفية (Terminal)</h3>
+      <p>لتشغيل البرنامج، افتح الطرفية (Command Prompt في ويندوز، أو Terminal في macOS/Linux) وانتقل إلى المجلد الذي حفظت فيه الملف، ثم اكتب:</p>
+      <div class="code-block">
+python3 hello_world.py
+      </div>
+      <div class="note"><strong>ملاحظة:</strong> على ويندوز، استخدم <span class="inline-code">python hello_world.py</span> بدلاً من <span class="inline-code">python3</span>.</div>
+      <p>إذا كان كل شيء يعمل بشكل صحيح، سترى الناتج التالي:</p>
+      <div class="code-block">
+Hello World!
+      </div>
+      <p>تهانينا! لقد كتبت وشغّلت أول برنامج بايثون لك! 🎉</p>
+
+      <h3 class="subsection-title">1.2.2 — شرح الكود</h3>
+      <p>دعنا نفهم ما حدث بالضبط:</p>
+      <ul>
+        <li><span class="inline-code">print()</span> هي دالة (function) مدمجة في بايثون تقوم بطباعة النص إلى الشاشة</li>
+        <li>النص <span class="inline-code">"Hello World!"</span> هو عبارة عن سلسلة نصية (string)، ونضعه بين علامتي اقتباس</li>
+        <li>عندما يشغّل بايثون الملف، ينفذ الأوامر سطراً سطراً من الأعلى إلى الأسفل</li>
+        <li>الدالة <span class="inline-code">print()</span> تأخذ ما بين القوسين وتخرجه إلى الشاشة</li>
+      </ul>
+
+      <div class="warning"><strong>تلميح:</strong> إذا واجهت خطأ مثل <span class="inline-code">'python3' is not recognized</span> على ويندوز، فهذا يعني أن بايثون لم يُضف إلى PATH. ارجع إلى خطوات التثبيت وتأكد من تحديد خيار "Add Python to PATH".</div>
+
+      <h2 class="section-title">1.3 التعامل مع الأخطاء (Troubleshooting)</h2>
+      <p>الأخطاء البرمجية (Bugs) جزء طبيعي من رحلة البرمجة. حتى المبرمجون المحترفون يكتبون أكواداً تحتوي على أخطاء طوال الوقت. المهم ليس تجنب الأخطاء، بل معرفة كيفية قراءة رسائل الخطأ وفهمها.</p>
+
+      <h3 class="subsection-title">1.3.1 أخطاء نحوية (Syntax Errors)</h3>
+      <p>الخطأ النحوي يحدث عندما لا يكتب الكود وفق قواعد بايثون. على سبيل المثال، إذا نسيت علامة الاقتباس:</p>
+      <div class="code-block">
+<span class="bu">print</span>(<span class="str">"Hello World!)
+      </div>
+
+      <div class="explanation-box">
+        <strong>🔍 شرح الكود بالتفصيل:</strong>
+        <p>هذا الكود يحتوي على خطأ نحوي (SyntaxError) متعمد. الدالة <code>print()</code> تحاول طباعة سلسلة نصية، لكن علامة الاقتباس المغلقة مفقودة — السلسلة بدأت بعلامة اقتباس <code>"</code> ولكنها لم تُغلق. بايثون يقرأ الكود سطراً سطراً، وعندما يصل إلى نهاية السطر (End Of Line) دون أن يجد علامة الاقتباس المغلقة، يتوقف ويظهر الخطأ: <code>SyntaxError: EOL while scanning string literal</code>. هذا يعني "خطأ نحوي: وصلت لنهاية السطر أثناء قراءة سلسلة نصية". الحل بسيط: أضف علامة الاقتباس المفقودة ليصبح الكود <code>print("Hello World!")</code>.</p>
+      </div>
+
+      <p>سيظهر خطأ مثل هذا:</p>
+      <div class="code-block">
+SyntaxError: EOL while scanning string literal
+      </div>
+      <p>هذا يعني أن بايثون وصل إلى نهاية السطر (End Of Line) أثناء قراءة السلسلة النصية — أي أنك نسيت إغلاق علامة الاقتباس.</p>
+
+      <h3 class="subsection-title">1.3.2 أخطاء وقت التشغيل (Runtime Errors)</h3>
+      <p>هذه الأخطاء تحدث أثناء تشغيل البرنامج. مثلاً، قد تحاول استخدام متغير لم تعرفه بعد:</p>
+      <div class="code-block">
+<span class="bu">print</span>(message)
+      </div>
+
+      <div class="explanation-box">
+        <strong>🔍 شرح الكود بالتفصيل:</strong>
+        <p>هذا الكود يستخدم الدالة <code>print()</code> لمحاولة طباعة قيمة المتغير <code>message</code>. لكن المتغير <code>message</code> لم يُعرف أو يُخزَّن له أي قيمة قبل استخدامه. بايثون يبحث في الذاكرة عن متغير بهذا الاسم ولا يجده، فيُظهر خطأ من نوع <code>NameError: name 'message' is not defined</code>، أي "خطأ في الاسم: المتغير 'message' غير معرَّف". الحل هو تعريف المتغير أولاً بتخزين قيمة فيه، مثلاً: <code>message = "أهلاً بالعالم"</code> ثم طباعته. تذكر: في بايثون، يجب تعريف المتغير قبل استخدامه.</p>
+      </div>
+
+      <div class="code-block">
+NameError: name 'message' is not defined
+      </div>
+      <p>هذا يعني أن بايثون لا يعرف <span class="inline-code">message</span> لأنك لم تعطه قيمة بعد.</p>
+
+      <h3 class="subsection-title">1.3.3 فهم رسائل الخطأ</h3>
+      <p>رسائل الخطأ في بايثون صديقة جداً للمبرمج. عادةً ما تخبرك:</p>
+      <ol>
+        <li>نوع الخطأ (مثل SyntaxError أو NameError)</li>
+        <li>رقم السطر الذي حدث فيه الخطأ</li>
+        <li>وصفاً مختصراً للمشكلة</li>
+      </ol>
+      <p>عندما تواجه خطأ، اقرأ رسالة الخطأ بعناية. غالباً ما ستجد أن الحل بسيط جداً!</p>
+
+      <h3 class="subsection-title">1.3.4 نصائح ذهبية للتعامل مع الأخطاء</h3>
+      <ul>
+        <li><strong>لا تخف من الأخطاء:</strong> كل مبرمج يراها يومياً</li>
+        <li><strong>اقرأ رسالة الخطأ:</strong> هي دليلك للحل</li>
+        <li><strong>ابحث عن رقم السطر:</strong> راجع الكود في ذلك السطر</li>
+        <li><strong>تأكد من الأقواس:</strong> غالباً ما تكون علامات الاقتباس أو الأقواس هي المشكلة</li>
+        <li><strong>جرب البحث:</strong> اكتب رسالة الخطأ في محرك بحث — غالباً ما وجدها غيرك قبل</li>
+      </ul>
+
+      <div class="note"><strong>ملاحظة:</strong> من أفضل الأصدقاء للمبرمج المبتدئ هو محرك البحث. إذا واجهت مشكلة، جرب البحث عنها. ستجد غالباً حلاً في منتديات مثل Stack Overflow.</div>
+
+      <h2 class="section-title">1.4 تشغيل بايثون من سطر الأوامر (Terminal)</h2>
+      <p>بالإضافة إلى تشغيل ملفات <span class="inline-code">.py</span>، يمكنك أيضاً تشغيل بايثون في الوضع التفاعلي (Interactive Mode) مباشرة في الطرفية.</p>
+
+      <h3 class="subsection-title">1.4.1 الوضع التفاعلي (Interactive Shell)</h3>
+      <p>اكتب <span class="inline-code">python3</span> في الطرفية (أو <span class="inline-code">python</span> على ويندوز) لفتح الوضع التفاعلي:</p>
+      <div class="code-block">
+$ python3
+Python 3.11.0 (main, ...)
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;
+      </div>
+      <p>العلامة <span class="inline-code">&gt;&gt;&gt;</span> تعني أن بايثون ينتظر منك كتابة أمر. جرب كتابة:</p>
+      <div class="code-block">
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="str">"Hello from interactive mode!"</span>)
+Hello from interactive mode!
+      </div>
+      <p>الوضع التفاعلي مفيد جداً لتجربة أوامر صغيرة بسرعة، لكن للتطبيقات الكبيرة سنستخدم ملفات <span class="inline-code">.py</span>.</p>
+
+      <h3 class="subsection-title">1.4.2 الخروج من الوضع التفاعلي</h3>
+      <p>للخروج من الوضع التفاعلي، اكتب:</p>
+      <div class="code-block">
+<span class="op">&gt;&gt;&gt;</span> <span class="bu">exit</span>()
+      </div>
+      <p>أو اضغط <span class="inline-code">Ctrl+D</span> (على macOS/Linux) أو <span class="inline-code">Ctrl+Z</span> ثم Enter (على ويندوز).</p>
+
+      <h2 class="section-title">1.5 التمارين</h2>
+      <p>الآن حان دورك لتطبق ما تعلمته. هذه التمارين مأخوذة من الكتاب الأصلي وستساعدك على تثبيت المفاهيم:</p>
+
+      <div class="exercise"><strong>تمرين 1-1: python.org</strong><br>
+      استعرض موقع <a href="https://python.org" target="_blank" rel="noopener">python.org</a> وابحث في قسم التنزيلات (Downloads). اقرأ عن أحدث إصدار من بايثون 3. هل هناك أي ملاحظات مثيرة للاهتمام حول هذه النسخة؟</div>
+
+      <div class="exercise"><strong>تمرين 1-2: أخطاء نحوية</strong><br>
+      جرب كتابة برنامج <span class="inline-code">hello_world.py</span> ولكن احذف إحدى علامتي الاقتباس. شغّل البرنامج وشاهد رسالة الخطأ. ثم احذف قوساً مفتوحاً أو مغلقاً وانظر ماذا يحدث.</div>
+
+      <div class="exercise"><strong>تمرين 1-3: الوضع التفاعلي</strong><br>
+      افتح الوضع التفاعلي لبايثون (بكتابة <span class="inline-code">python3</span> في الطرفية). اكتب الأوامر التالية جرباً:<br>
+      <span class="inline-code">print("مرحباً بالعالم")</span><br>
+      <span class="inline-code">2 + 3</span><br>
+      <span class="inline-code">"Hello " + "World"</span><br>
+      شاهد كيف يستجيب بايثون لكل أمر.</div>
+
+      <div class="exercise"><strong>تمرين 1-4: أول برنامج منفصل</strong><br>
+      أنشئ ملفاً جديداً باسم <span class="inline-code">hello_arabic.py</span> واكتب فيه:<br>
+      <span class="inline-code">print("مرحباً بالعالم")</span><br>
+      شغّله من الطرفية وتأكد من ظهور النص العربي بشكل صحيح.</div>
+
+      <h2 class="section-title">نموذج بيانات بايثون - Python Data Model</h2>
+      <p>في بايثون، كل شيء هو كائن. الدوال المدمجة مثل <span class="inline-code">len()</span> و <span class="inline-code">str()</span> و <span class="inline-code">bool()</span> تستدعي دوال خاصة (<strong>magic methods</strong>) خلف الكواليس. فهم هذا النموذج يجعلك تفهم "لماذا" تتصرف بايثون بهذه الطريقة:</p>
+
+      <div class="code-block">
+<span class="cm"># len() تستدعي __len__() داخلياً</span>
+<span class="bu">print</span>(<span class="bu">len</span>([<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>]))  <span class="cm"># == [1,2,3].__len__()</span>
+
+<span class="cm"># str() تستدعي __str__()</span>
+<span class="bu">print</span>(<span class="bu">str</span>(<span class="num">42</span>))       <span class="cm"># == (42).__str__()</span>
+
+<span class="cm"># bool() تستدعي __bool__()، فإن لم توجد فتستدعي __len__()</span>
+<span class="bu">print</span>(<span class="bu">bool</span>([]))      <span class="cm"># False — لأن len([]) == 0</span>
+<span class="bu">print</span>(<span class="bu">bool</span>([<span class="num">1</span>]))     <span class="cm"># True — لأن len([1]) == 1</span>
+      </div>
+
+      <div class="explanation-box">
+        <strong>🔍 شرح الكود بالتفصيل:</strong>
+        <p>هذا المقطع يوضح كيف تعمل دوال بايثون المدمجة خلف الكواليس عبر استدعاء دوال خاصة (magic methods) يملكها كل كائن. في السطر الأول، التعليق <code># len() تستدعي __len__() داخلياً</code> يشرح أن <code>len([1, 2, 3])</code> لا تحسب الطول بنفسها، بل تستدعي <code>__len__()</code> التي تعرفها القائمة وتعيد 3. في السطر الثاني، <code>str(42)</code> تستدعي <code>__str__()</code> لتحويل الرقم 42 إلى السلسلة النصية <code>"42"</code>. السطر الثالث يوضح أن <code>bool([])</code> تتحقق أولاً من وجود <code>__bool__()</code> في الكائن — القائمة الفارغة لا تملكها، فتلجأ إلى <code>__len__()</code> التي تعيد 0، وأي قيمة صفرية تعتبر <code>False</code> منطقياً. السطر الأخير: <code>bool([1])</code> — القائمة تحتوي على عنصر واحد، <code>__len__()</code> تعيد 1، والقيم غير الصفرية تعتبر <code>True</code>. الناتج النهائي عند التشغيل سيكون: <code>3</code>، <code>42</code>، <code>False</code>، <code>True</code> — كل منها في سطر منفصل.</p>
+      </div>
+
+      <div class="code-block">
+<span class="cm"># إضافة دالتين لمطالعة الكائن (سنرى التفاصيل لاحقاً)</span>
+<span class="kw">class</span> <span class="fn">Book</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>, title, pages):
+        <span class="kw">self</span>.title = title
+        <span class="kw">self</span>.pages = pages
+
+    <span class="kw">def</span> <span class="fn">__repr__</span>(<span class="kw">self</span>):       <span class="cm"># للمطورين</span>
+        <span class="kw">return</span> <span class="str">f'Book({self.title!r})'</span>
+
+    <span class="kw">def</span> <span class="fn">__str__</span>(<span class="kw">self</span>):        <span class="cm"># للمستخدمين</span>
+        <span class="kw">return</span> <span class="kw">self</span>.title
+
+    <span class="kw">def</span> <span class="fn">__len__</span>(<span class="kw">self</span>):        <span class="cm"># len() تعمل على الكائن</span>
+        <span class="kw">return</span> <span class="kw">self</span>.pages
+
+b = Book(<span class="str">'Fluent Python'</span>, <span class="num">983</span>)
+<span class="bu">print</span>(<span class="bu">repr</span>(b))   <span class="cm"># Book('Fluent Python') — عبر __repr__</span>
+<span class="bu">print</span>(b)         <span class="cm"># Fluent Python — عبر __str__</span>
+<span class="bu">print</span>(<span class="bu">len</span>(b))    <span class="cm"># 983 — عبر __len__</span>
+      </div>
+
+      <div class="explanation-box">
+        <strong>🔍 شرح الكود بالتفصيل:</strong>
+        <p>هذا الكود يعرّف كلاس (class) باسم <code>Book</code> يمثل كتاباً. الكلاس يحتوي على أربع دوال خاصة (magic methods):
+        <br><strong>1. <code>__init__</code>:</strong> دالة البناء (constructor) — تُستدعى تلقائياً عند إنشاء كائن جديد. تأخذ وسيطين: <code>title</code> (عنوان الكتاب) و <code>pages</code> (عدد الصفحات). السطر <code>self.title = title</code> يخزّن العنوان في الكائن، و <code>self.pages = pages</code> يخزّن عدد الصفحات.
+        <br><strong>2. <code>__repr__</code>:</strong> تَعيد تمثيلاً دقيقاً للكائن يستهدف المطورين. تستخدم f-string مع <code>!r</code> لطباعة <code>repr()</code> الخاصة بالعنوان. ناتجها: <code>Book('Fluent Python')</code>.
+        <br><strong>3. <code>__str__</code>:</strong> تَعيد تمثيلاً مقروءاً للمستخدم (عنوان الكتاب فقط). تُستدعى عند استخدام <code>print()</code> على الكائن. ناتجها: <code>Fluent Python</code>.
+        <br><strong>4. <code>__len__</code>:</strong> تَعيد عدد الصفحات، مما يسمح باستخدام <code>len(b)</code> مباشرة على كائن <code>Book</code>. ناتجها: <code>983</code>.
+        <br>بعد تعريف الكلاس، ننشئ كائن <code>b = Book('Fluent Python', 983)</code> — هنا تستدعى <code>__init__</code>. ثم نطبع: <code>repr(b)</code> يستدعي <code>__repr__</code> → <code>Book('Fluent Python')</code>، <code>print(b)</code> يستدعي <code>__str__</code> → <code>Fluent Python</code>، <code>len(b)</code> يستدعي <code>__len__</code> → <code>983</code>. هذا يوضح كيف تدمج بايثون الدوال المدمجة مع الكلاسات المخصصة بسلاسة.</p>
+      </div>
+
+      <div class="note"><strong>💡 من Fluent Python:</strong> <span class="inline-code">__repr__</span> يجب أن يعيد تمثيلاً دقيقاً يمكن استخدامه لإنشاء الكائن من جديد (إن أمكن). <span class="inline-code">__str__</span> يُستدعى بواسطة <span class="inline-code">print()</span> ويجب أن يكون مقروءاً للمستخدم. قاعدة ذهبية: <span class="inline-code">bool(obj)</span> ترجع <span class="inline-code">False</span> إذا كان <span class="inline-code">__bool__</span> أو <span class="inline-code">__len__</span> يعيد 0.</div>
+
+      <h2 class="section-title">1.6 ملخص الفصل</h2>
+      <div class="summary-box">
+        <h3>📝 ملخص الفصل</h3>
+        <ul>
+          <li>تعرّفت على لغة بايثون وكيفية تثبيتها على أنظمة ويندوز وmacOS ولينكس</li>
+          <li>تعلمت كتابة أول برنامج باستخدام الدالة <span class="inline-code">print()</span></li>
+          <li>عرفت كيفية تشغيل ملفات بايثون من الطرفية</li>
+          <li>تعلمت الفرق بين الخطأ النحوي (SyntaxError) وخطأ وقت التشغيل (NameError)</li>
+          <li>اكتشفت الوضع التفاعلي لبايثون وكيفية استخدامه للتجربة السريعة</li>
+          <li>أدركت أن الأخطاء جزء طبيعي من البرمجة — المهم هو فهم رسائل الخطأ</li>
+        </ul>
+      </div>
+
+      <div class="keypoints">
+        <h3>✦ أهم النقاط التي يجب أن تتذكرها</h3>
+        <ul>
+          <li>بايثون 3 هي النسخة المستخدمة اليوم؛ تأكد دائماً من إضافتها إلى <code>PATH</code> أثناء التثبيت.</li>
+          <li>دالة <code>print()</code> هي أول أداة تفاعلية لك مع البرنامج — استخدمها لترى ما يحدث.</li>
+          <li>الخطأ النحوي (SyntaxError) يمنع التشغيل تماماً، أما خطأ وقت التشغيل (مثل NameError) فيظهر أثناء التنفيذ.</li>
+          <li>الطرفية التفاعلية أداة ممتازة للتجريب السريع قبل كتابة ملفات كاملة.</li>
+          <li>رسائل الخطأ صديقة: اقرأ نوع الخطأ ورقم السطر أولاً.</li>
+        </ul>
+      </div>
+
+      <div class="quiz">
+        <h3>🧪 اختبر فهمك (اضغط على السؤال لإظهار الإجابة)</h3>
+        <div class="quiz-q"><span class="q-mark">؟</span> ما الفرق بين SyntaxError و NameError؟</div>
+        <div class="quiz-a"><b>الإجابة:</b> SyntaxError يحدث قبل تشغيل البرنامج بسبب كتابة غير صحيحة (مثل نسيان علامة اقتباس)، فيمنع التنفيذ. أما NameError فيحدث أثناء التشغيل عند استخدام متغير لم تُعرّفه بعد.</div>
+        <div class="quiz-q"><span class="q-mark">؟</span> لماذا نضيف Python إلى PATH عند التثبيت على Windows؟</div>
+        <div class="quiz-a"><b>الإجابة:</b> ليتمكن نظام التشغيل من recognizing أمر <code>python</code> من أي مجلد في موجه الأوامر، بدلاً من الحاجة لكتابة المسار الكامل للملف التنفيذي.</div>
+        <div class="quiz-q"><span class="q-mark">؟</span> ما فائدة الطرفية التفاعلية (Interactive Shell)؟</div>
+        <div class="quiz-a"><b>الإجابة:</b> تتيح لك تنفيذ أوامر بايثون سطراً بسطر فوراً دون إنشاء ملف، مثالية لتجربة فكرة صغيرة أو حساب سريع.</div>
+      </div>
+
+      <div class="note"><strong>نصيحة:</strong> في الفصل القادم، سنتعمق في المتغيرات وأنواع البيانات. تأكد من أن بايثون مثبت ويعمل بشكل صحيح قبل الانتقال. جرب كتابة وتشغيل عدة برامج بسيطة حتى تشعر بالراحة مع العملية.</div>
+    </div>
+
+    <div class="note"><strong>💡 نصيحة ذهبية:</strong> أنشئ بيئة افتراضية (virtual environment) لكل مشروع باستخدام <span class="inline-code">python -m venv myenv</span>. هذا يفصل حزم كل مشروع عن الآخر ويمنع تعارض الإصدارات. فعّل البيئة بـ <span class="inline-code">source myenv/bin/activate</span> (لينكس) أو <span class="inline-code">myenv\Scripts\activate</span> (ويندوز).</div>
+
+    <div class="warning"><strong>⚠️ خطأ شائع:</strong> نسيان النقطتين الرأسيتين <span class="inline-code">:</span> بعد <span class="inline-code">def</span>، <span class="inline-code">if</span>، <span class="inline-code">for</span>، <span class="inline-code">while</span>. هذا من أكثر أخطاء المبتدئين شيوعاً. تأكد دائماً من وجود <span class="inline-code">:</span> في نهاية السطر الذي يفتح كتلة جديدة.</div>
+
+    <div class="exercise"><strong>🏋️ تمرين:</strong> اكتب برنامجاً يطبع مثلثاً قائماً باستخدام <span class="inline-code">*</span> بارتفاع 5 أسطر. استخدم <span class="inline-code">print()</span> مع الضرب في النصوص: <span class="inline-code">print('*' * 3)</span> يطبع <span class="inline-code">***</span>. جرب أن تجعل المستخدم يُدخل الارتفاع بنفسه.</div>
+
+    <div class="footer">
+      <p>دورة بايثون المكثفة - ترجمة وتعريب بناءً على كتاب Python Crash Course بقلم Eric Matthes</p>
+      <p style="margin-top:5px;">جميع أكواد بايثون محفوظة بحقوقها &copy; No Starch Press</p>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

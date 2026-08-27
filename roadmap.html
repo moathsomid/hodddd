@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الخطة الدراسية — Applied AI Engineer</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--bg:#070b14;--bg2:#0d1520;--bg3:#162033;--card:#1a2744;--card-hover:#223354;
+    --accent:#00d4ff;--accent2:#a855f7;--accent3:#fbbf24;--accent4:#34d399;--accent5:#f87171;
+    --text:#e8edf5;--text-dim:#8899bb;--text-bright:#f0f4ff;--border:#253b5c;
+    --radius:16px;--radius-sm:10px;}
+  html{scroll-behavior:smooth}
+  body{font-family:'Noto Naskh Arabic','Noto Sans Arabic','Traditional Arabic',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;overflow-x:hidden}
+  ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+  #progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:99999;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));transform-origin:0 50%;scale:0 1;transition:scale .15s}
+  canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+  nav{position:sticky;top:0;z-index:9999;background:rgba(7,11,20,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 20px;height:52px;display:flex;align-items:center;gap:16px}
+  nav .logo{font-weight:800;font-size:.85rem;white-space:nowrap;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  nav .links{display:flex;gap:4px;flex:1;overflow-x:auto}
+  nav .links a{color:var(--text-dim);text-decoration:none;font-size:.68rem;padding:4px 10px;border-radius:6px;transition:.2s;font-weight:600;white-space:nowrap}
+  nav .links a:hover,nav .links a.active{color:var(--text);background:var(--card)}
+  #overall-progress{font-size:.7rem;font-weight:700;color:var(--accent4);white-space:nowrap}
+  section{position:relative;z-index:1;padding:36px 24px}
+  .wrap{max-width:1100px;margin:0 auto}
+  .hero{min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 24px 24px}
+  .hero h1{font-size:clamp(1.6rem,4.5vw,2.8rem);font-weight:900;line-height:1.4}
+  .hero h1 .g{background:linear-gradient(135deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{color:var(--text-dim);max-width:640px;margin:14px auto 26px;font-size:.95rem}
+  .hero .cta{display:inline-block;padding:10px 32px;border-radius:60px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;box-shadow:0 4px 24px rgba(0,212,255,.25);transition:.3s}
+  .hero .cta:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(0,212,255,.35)}
+  .stats-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:20px 0 26px}
+  .stats-bar .s{background:var(--card);border-radius:var(--radius-sm);padding:14px 10px;text-align:center;border:1px solid var(--border)}
+  .stats-bar .s .n{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .stats-bar .s .l{font-size:.7rem;color:var(--text-dim)}
+  .sec-label{font-size:.68rem;font-weight:700;letter-spacing:2px;color:var(--accent);margin-bottom:4px;text-transform:uppercase}
+  .sec-title{font-size:clamp(1.2rem,2.8vw,1.8rem);font-weight:800;margin-bottom:6px}
+  .sec-sub{color:var(--text-dim);font-size:.9rem;margin-bottom:22px}
+  .group{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);margin-bottom:14px;overflow:hidden;transition:.3s}
+  .group:hover{border-color:var(--accent)}
+  .group-header{padding:14px 18px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;user-select:none}
+  .group-header:hover{background:var(--card-hover)}
+  .group-header .g-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .group-header .g-emoji{font-size:1.1rem}
+  .group-header h3{font-size:.92rem;font-weight:700}
+  .group-header .g-progress{font-size:.72rem;font-weight:700;color:var(--accent4);min-width:44px}
+  .group-header .arrow{transition:.3s;color:var(--text-dim);font-size:.75rem}
+  .group.open .group-header .arrow{transform:rotate(180deg)}
+  .group-body{display:none}
+  .group.open .group-body{display:block}
+  .g-bar{height:3px;background:var(--bg3)}
+  .g-bar .fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent4),var(--accent));transition:width .5s}
+  .lessons{display:grid;gap:8px;padding:12px 14px}
+  .lesson{display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-radius:var(--radius-sm);background:var(--bg2);border:1px solid var(--border);transition:.2s}
+  .lesson:hover{border-color:var(--accent)}
+  .lesson .l-check{width:20px;height:20px;border-radius:5px;border:2px solid var(--border);background:var(--bg3);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--accent4);transition:.2s}
+  .lesson.done{opacity:.6}
+  .lesson.done .l-check{background:var(--accent4);border-color:var(--accent4);color:#000}
+  .lesson.done .l-title{text-decoration:line-through;text-decoration-color:rgba(52,211,153,.3)}
+  .lesson .l-title{font-size:.85rem;font-weight:700}
+  .lesson .l-weeks{font-size:.66rem;color:var(--accent);background:rgba(0,212,255,.08);display:inline-block;padding:1px 8px;border-radius:4px;margin-top:2px}
+  .lesson .l-open{font-size:.7rem;font-weight:700;color:var(--accent3);text-decoration:none;background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.3);padding:4px 12px;border-radius:6px;transition:.2s;white-space:nowrap}
+  .lesson .l-open:hover{background:rgba(250,204,21,.2)}
+  .btn-clear{display:inline-block;padding:8px 20px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);color:var(--text-dim);cursor:pointer;font-size:.78rem;font-weight:600;transition:.2s}
+  .btn-clear:hover{border-color:var(--accent5);color:var(--accent5)}
+  footer{text-align:center;padding:28px 24px;border-top:1px solid var(--border);color:var(--text-dim);font-size:.75rem}
+  @media(max-width:640px){
+    nav{padding:0 10px;height:44px;gap:6px}nav .links a{font-size:.55rem;padding:3px 6px}nav .logo{font-size:.65rem}
+    section{padding:20px 10px}.wrap{padding:0 4px}.group-header{padding:10px 14px}.lesson{padding:8px 10px;grid-template-columns:24px 1fr}
+    .lesson .l-open{display:none}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+</head>
+<body>
+<div id="progress"></div>
+<canvas id="bg-canvas"></canvas>
+<nav><div class="logo">◈ AI Roadmap</div><div class="links"><a href="index.html">🏠 الرئيسية</a><a href="#overview">نظرة</a><a href="#year1">السنة 1</a><a href="#year2">السنة 2</a></div><div id="overall-progress">التقدم: 0%</div></nav>
+<section class="hero">
+<h1>خطة <span class="g">52 درساً</span> تفاعلية<br>لتصبح Applied AI Engineer</h1>
+<p>كل درس في الموقع له مكانه في الخطة. اضغط على أي درس لفتحه مباشرة، وعلّم على الدروس المنجزة لتتبع تقدمك عبر السنتين.</p>
+<a href="#overview" class="cta">🚀 ابدأ</a>
+</section>
+<section id="overview"><div class="wrap">
+<div class="sec-label">نظرة عامة</div>
+<h2 class="sec-title">الرحلة الكاملة — 52 درساً على الموقع</h2>
+<p class="sec-sub">تنظيم كامل يطابق قائمة الموقع: كل مجموعة قسم، وكل درس مرتبط بصفحته مباشرة مع أسابيعه الأصلية (104 أسبوعاً).</p>
+<div class="stats-bar">
+<div class="s"><div class="n">52</div><div class="l">درساً</div></div>
+<div class="s"><div class="n">2</div><div class="l">سنتان</div></div>
+<div class="s"><div class="n">10</div><div class="l">أقسام</div></div>
+<div class="s"><div class="n">104</div><div class="l">أسبوعاً</div></div>
+</div>
+<button class="btn-clear" onclick="if(confirm('إعادة تعيين كل التقدم؟')){localStorage.removeItem('ai-roadmap-lessons');location.reload()}">🔄 إعادة تعيين التقدم</button>
+</div></section>
+<section id="year1"><div class="wrap">
+<div class="sec-label">السنة الأولى</div><h2 class="sec-title">التحول إلى مهندس حقيقي</h2>
+<p class="sec-sub">اضغط على القسم لفتحه ← علّم على الدرس بعد إنجازه ← افتحه من الموقع.</p>
+<div id="y1"></div></div></section>
+<section id="year2"><div class="wrap">
+<div class="sec-label">السنة الثانية</div><h2 class="sec-title">الدخول إلى المستوى القوي</h2>
+<p class="sec-sub">أنظمة متقدمة، بنية تحتية، وتجهيز لسوق العمل.</p>
+<div id="y2"></div></div></section>
+<footer><p>بناها <strong style="color:var(--text)">Builder</strong> لمستقبل <strong style="color:var(--accent)">AI</strong> — 2026 → 2028</p></footer>
+<script>
+var Y1C = `<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">📘</span><h3>الجزء الأول: الأساسيات</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="chapter1.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter1.html')"></span><div class="l-info"><div class="l-title">1. البدء مع بايثون</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter1.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter2.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter2.html')"></span><div class="l-info"><div class="l-title">2. المتغيرات وأنواع البيانات البسيطة</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter2.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter3.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter3.html')"></span><div class="l-info"><div class="l-title">3. مقدمة إلى القوائم</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter3.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter4.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter4.html')"></span><div class="l-info"><div class="l-title">4. التعامل مع القوائم</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter4.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter5.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter5.html')"></span><div class="l-info"><div class="l-title">5. جمل if</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter5.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter6.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter6.html')"></span><div class="l-info"><div class="l-title">6. القواميس</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter6.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter7.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter7.html')"></span><div class="l-info"><div class="l-title">7. إدخال المستخدم وحلقات while</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter7.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter8.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter8.html')"></span><div class="l-info"><div class="l-title">8. الدوال</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter8.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter9.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter9.html')"></span><div class="l-info"><div class="l-title">9. الكلاسات</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter9.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter10.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter10.html')"></span><div class="l-info"><div class="l-title">10. الملفات والاستثناءات</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter10.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="chapter11.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('chapter11.html')"></span><div class="l-info"><div class="l-title">11. اختبار الكود</div><div class="l-weeks"></div></div><a class="l-open" href="website/chapter11.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>
+<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">⚙️</span><h3>Core Engineering</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="python_advanced.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('python_advanced.html')"></span><div class="l-info"><div class="l-title">Python Advanced</div><div class="l-weeks">أسابيع 4</div></div><a class="l-open" href="website/python_advanced.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="asyncio.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('asyncio.html')"></span><div class="l-info"><div class="l-title">AsyncIO - البرمجة غير المتزامنة</div><div class="l-weeks">أسابيع 3</div></div><a class="l-open" href="website/asyncio.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="sql.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('sql.html')"></span><div class="l-info"><div class="l-title">SQL - قواعد البيانات</div><div class="l-weeks">أسابيع 5</div></div><a class="l-open" href="website/sql.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="postgresql.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('postgresql.html')"></span><div class="l-info"><div class="l-title">PostgreSQL متقدم</div><div class="l-weeks">أسابيع 6-7, 13-14, 18</div></div><a class="l-open" href="website/postgresql.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="linux.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('linux.html')"></span><div class="l-info"><div class="l-title">Linux - سطر الأوامر</div><div class="l-weeks">أسابيع 8-9, 15</div></div><a class="l-open" href="website/linux.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="git.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('git.html')"></span><div class="l-info"><div class="l-title">Git/GitHub - التحكم بالنسخ</div><div class="l-weeks">أسابيع 10, 16</div></div><a class="l-open" href="website/git.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="docker.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('docker.html')"></span><div class="l-info"><div class="l-title">Docker - الحاويات</div><div class="l-weeks">أسابيع 20, 25-26</div></div><a class="l-open" href="website/docker.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>
+<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">🚀</span><h3>Backend + AI</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="fastapi.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('fastapi.html')"></span><div class="l-info"><div class="l-title">FastAPI - تطبيقات الويب</div><div class="l-weeks">أسابيع 17, 19, 21-22</div></div><a class="l-open" href="website/fastapi.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="redis.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('redis.html')"></span><div class="l-info"><div class="l-title">Redis - التخزين المؤقت</div><div class="l-weeks">أسابيع 23</div></div><a class="l-open" href="website/redis.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="ai_fundamentals.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('ai_fundamentals.html')"></span><div class="l-info"><div class="l-title">أساسيات الذكاء الاصطناعي</div><div class="l-weeks">أسابيع 27, 31</div></div><a class="l-open" href="website/ai_fundamentals.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>
+<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">🧠</span><h3>Agent Engineering</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="rag.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('rag.html')"></span><div class="l-info"><div class="l-title">RAG - التوليد المعزز بالاسترجاع</div><div class="l-weeks">أسابيع 33, 35</div></div><a class="l-open" href="website/rag.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="vector_databases.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('vector_databases.html')"></span><div class="l-info"><div class="l-title">Vector Databases - Qdrant</div><div class="l-weeks">أسابيع 28, 34</div></div><a class="l-open" href="website/vector_databases.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="ollama.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('ollama.html')"></span><div class="l-info"><div class="l-title">Ollama - النماذج المحلية</div><div class="l-weeks">أسابيع 36</div></div><a class="l-open" href="website/ollama.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="langchain.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('langchain.html')"></span><div class="l-info"><div class="l-title">LangChain - بناء تطبيقات LLM</div><div class="l-weeks">أسابيع 37-38</div></div><a class="l-open" href="website/langchain.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="langgraph.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('langgraph.html')"></span><div class="l-info"><div class="l-title">LangGraph - الرسوم البيانية</div><div class="l-weeks">أسابيع 39-40</div></div><a class="l-open" href="website/langgraph.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="agents.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('agents.html')"></span><div class="l-info"><div class="l-title">وكلاء الذكاء الاصطناعي</div><div class="l-weeks">أسابيع 41-44</div></div><a class="l-open" href="website/agents.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>
+<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">⚙️</span><h3>MLOps Foundations</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="mlflow.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('mlflow.html')"></span><div class="l-info"><div class="l-title">MLflow - تتبع التجارب</div><div class="l-weeks">أسابيع 45-48</div></div><a class="l-open" href="website/mlflow.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="cicd.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('cicd.html')"></span><div class="l-info"><div class="l-title">CI/CD - GitHub Actions</div><div class="l-weeks">أسابيع 49-50</div></div><a class="l-open" href="website/cicd.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="aws.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('aws.html')"></span><div class="l-info"><div class="l-title">AWS - EC2 + S3 + IAM</div><div class="l-weeks">أسابيع 51-52</div></div><a class="l-open" href="website/aws.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>
+<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">🔷</span><h3>مواضيع متقدمة</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="oop.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('oop.html')"></span><div class="l-info"><div class="l-title">البرمجة كائنية التوجه OOP</div><div class="l-weeks">أسابيع 1-2</div></div><a class="l-open" href="website/oop.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>
+<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">🚀</span><h3>المشاريع - السنة الأولى</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="project1.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('project1.html')"></span><div class="l-info"><div class="l-title">المشروع 1: غزو الفضائيين</div><div class="l-weeks"></div></div><a class="l-open" href="website/project1.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="project2.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('project2.html')"></span><div class="l-info"><div class="l-title">المشروع 2: تصور البيانات</div><div class="l-weeks"></div></div><a class="l-open" href="website/project2.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="project3.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('project3.html')"></span><div class="l-info"><div class="l-title">المشروع 3: تطبيقات الويب</div><div class="l-weeks"></div></div><a class="l-open" href="website/project3.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="project_data_api.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('project_data_api.html')"></span><div class="l-info"><div class="l-title">المشروع 4: Data API Platform</div><div class="l-weeks">أسابيع 11-12, 24</div></div><a class="l-open" href="website/project_data_api.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="project_ai_doc_chat.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('project_ai_doc_chat.html')"></span><div class="l-info"><div class="l-title">المشروع 5: AI Document Chat</div><div class="l-weeks">أسابيع 29-30, 32</div></div><a class="l-open" href="website/project_ai_doc_chat.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="project_ai_platform.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('project_ai_platform.html')"></span><div class="l-info"><div class="l-title">المشروع 6: AI Platform Deployment</div><div class="l-weeks">أسابيع 53-56</div></div><a class="l-open" href="website/project_ai_platform.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>`;
+var Y2C = `<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">🧠</span><h3>السنة الثانية - Advanced AI</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="multi_agents.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('multi_agents.html')"></span><div class="l-info"><div class="l-title">أنظمة Multi-Agent</div><div class="l-weeks">أسابيع 57-60</div></div><a class="l-open" href="website/multi_agents.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="websockets.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('websockets.html')"></span><div class="l-info"><div class="l-title">WebSockets بعمق</div><div class="l-weeks">أسابيع 61</div></div><a class="l-open" href="website/websockets.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="message_queues.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('message_queues.html')"></span><div class="l-info"><div class="l-title">Message Queues - Redis/Celery</div><div class="l-weeks">أسابيع 62</div></div><a class="l-open" href="website/message_queues.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="event_driven.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('event_driven.html')"></span><div class="l-info"><div class="l-title">Event-Driven Architecture</div><div class="l-weeks">أسابيع 63</div></div><a class="l-open" href="website/event_driven.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="streaming_llm.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('streaming_llm.html')"></span><div class="l-info"><div class="l-title">Streaming - استجابات LLM</div><div class="l-weeks">أسابيع 64</div></div><a class="l-open" href="website/streaming_llm.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="specialized_agents.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('specialized_agents.html')"></span><div class="l-info"><div class="l-title">وكلاء متخصصون</div><div class="l-weeks">أسابيع 65-68</div></div><a class="l-open" href="website/specialized_agents.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="project_ai_research.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('project_ai_research.html')"></span><div class="l-info"><div class="l-title">مشروع Multi-Agent Research</div><div class="l-weeks">أسابيع 69-72</div></div><a class="l-open" href="website/project_ai_research.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>
+<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">🏗️</span><h3>السنة الثانية — Infrastructure</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="kubernetes.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('kubernetes.html')"></span><div class="l-info"><div class="l-title">Kubernetes + Helm</div><div class="l-weeks">أسابيع 73-76</div></div><a class="l-open" href="website/kubernetes.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="observability.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('observability.html')"></span><div class="l-info"><div class="l-title">Observability - Monitoring</div><div class="l-weeks">أسابيع 77-80</div></div><a class="l-open" href="website/observability.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="infra_dashboard.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('infra_dashboard.html')"></span><div class="l-info"><div class="l-title">مشروع AI Infra Dashboard</div><div class="l-weeks">أسابيع 81-84</div></div><a class="l-open" href="website/infra_dashboard.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="security_perf.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('security_perf.html')"></span><div class="l-info"><div class="l-title">Security + Performance</div><div class="l-weeks">أسابيع 85-88</div></div><a class="l-open" href="website/security_perf.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>
+<div class="group"><div class="group-header" onclick="this.closest('.group').classList.toggle('open')"><div class="g-left"><span class="g-emoji">🚀</span><h3>السنة الثانية — Career</h3></div><span class="g-progress">0/0</span><span class="arrow">▾</span></div><div class="g-bar"><div class="fill" style="width:0%"></div></div><div class="group-body"><div class="lessons"><div class="lesson" data-lesson="code_quality.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('code_quality.html')"></span><div class="l-info"><div class="l-title">إعادة هيكلة + جودة الكود</div><div class="l-weeks">أسابيع 89-92</div></div><a class="l-open" href="website/code_quality.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="career_digital.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('career_digital.html')"></span><div class="l-info"><div class="l-title">الظهور الرقمي + LinkedIn</div><div class="l-weeks">أسابيع 93-96</div></div><a class="l-open" href="website/career_digital.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="interview_prep.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('interview_prep.html')"></span><div class="l-info"><div class="l-title">الاستعداد للمقابلات</div><div class="l-weeks">أسابيع 97-100</div></div><a class="l-open" href="website/interview_prep.html" title="فتح الدرس">فتح الدرس ↩</a></div><div class="lesson" data-lesson="career_launch.html"><span class="l-check" onclick="event.stopPropagation();toggleLesson('career_launch.html')"></span><div class="l-info"><div class="l-title">إطلاق + Freelance</div><div class="l-weeks">أسابيع 101-104</div></div><a class="l-open" href="website/career_launch.html" title="فتح الدرس">فتح الدرس ↩</a></div></div></div></div>`;
+
+const LSTORE='ai-roadmap-lessons';
+function loadLessons(){try{return JSON.parse(localStorage.getItem(LSTORE))||{}}catch(e){return{}}}
+function saveLessons(d){localStorage.setItem(LSTORE,JSON.stringify(d))}
+let learned=loadLessons();
+(function migrate(){
+  if(Object.keys(learned).length)return;
+  try{
+    const old=JSON.parse(localStorage.getItem('ai-roadmap3-lessons'))||{};
+    let migrated=false;
+    Object.keys(old).forEach(function(k){
+      const nk=k.indexOf('website/')===0?k.replace('website/',''):k;
+      if(old[k]&&!learned[nk]){learned[nk]=true;migrated=true;}
+    });
+    if(migrated)saveLessons(learned);
+  }catch(e){}
+})();
+function refreshGroup(g){
+  const items=g.querySelectorAll('.lesson');const total=items.length;
+  const dcount=g.querySelectorAll('.lesson.done').length;
+  const pct=total>0?Math.round(dcount/total*100):0;
+  const fill=g.querySelector('.fill');if(fill)fill.style.width=pct+'%';
+  const prog=g.querySelector('.g-progress');if(prog)prog.textContent=dcount+'/'+total;
+}
+window.toggleLesson=function(key){
+  learned[key]=!learned[key];saveLessons(learned);
+  document.querySelectorAll('.lesson[data-lesson="'+key+'"]').forEach(function(el){el.classList.toggle('done',learned[key]);});
+  document.querySelectorAll('.group').forEach(refreshGroup);updateOverall();
+};
+function updateOverall(){
+  const all=document.querySelectorAll('.lesson').length;
+  const c=document.querySelectorAll('.lesson.done').length;
+  const pct=all>0?Math.round(c/all*100):0;
+  document.getElementById('overall-progress').textContent='التقدم: '+pct+'% ('+c+'/'+all+' دروساً)';
+}
+function render(){
+  const y1=document.getElementById('y1'),y2=document.getElementById('y2');
+  y1.innerHTML=Y1C;y2.innerHTML=Y2C;
+  document.querySelectorAll('.lesson').forEach(function(el){const k=el.getAttribute('data-lesson');if(learned[k])el.classList.add('done');});
+  document.querySelectorAll('.group').forEach(refreshGroup);updateOverall();
+  document.querySelectorAll('#y1 .group:first-child, #y2 .group:first-child').forEach(function(el){el.classList.add('open');});
+}
+
+const bar=document.getElementById('progress');
+function up(){const h=document.documentElement;const t=h.scrollHeight-h.clientHeight;const p=t>0?(h.scrollTop/t):0;bar.style.scale=p+' 1';}
+addEventListener('scroll',up,{passive:true});up();
+(function(){
+  const c=document.getElementById('bg-canvas'),cx=c.getContext('2d');let w,h,pts=[];
+  function sz(){w=c.width=innerWidth;h=c.height=innerHeight}
+  addEventListener('resize',sz);sz();
+  class Pt{constructor(){this.reset()}
+    reset(){this.x=Math.random()*w;this.y=Math.random()*h;this.r=Math.random()*2+.4;this.dx=(Math.random()-.5)*.3;this.dy=(Math.random()-.5)*.3;this.a=Math.random()*.3+.05}
+    upd(){this.x+=this.dx;this.y+=this.dy;if(this.x<0||this.x>w)this.dx*=-1;if(this.y<0||this.y>h)this.dy*=-1}
+    dr(){cx.beginPath();cx.arc(this.x,this.y,this.r,0,Math.PI*2);cx.fillStyle='rgba(0,212,255,'+this.a+')';cx.fill()}}
+  function link(a,b){cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);const d=Math.hypot(a.x-b.x,a.y-b.y);cx.strokeStyle='rgba(0,212,255,'+Math.max(0,.12-d/4000)+')';cx.stroke()}
+  for(let i=0;i<60;i++)pts.push(new Pt());
+  (function loop(){cx.clearRect(0,0,w,h);pts.forEach(p=>{p.upd();p.dr()});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++)if(Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y)<130)link(pts[i],pts[j]);requestAnimationFrame(loop)})();
+})();
+render();
+</script>
+</body>
+</html>

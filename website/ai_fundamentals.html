@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أساسيات الذكاء الاصطناعي - دورة بايثون المكثفة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle">☰</button>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h1>🐍 دورة بايثون المكثفة</h1>
+    <p>Python Crash Course</p>
+  </div>
+  <nav class="sidebar-nav" id="sidebarNav">
+    <a href="../index.html" style="font-weight:600;color:#ffd166;">🏠 الرئيسية</a>
+    <a href="../roadmap.html" style="font-weight:600;color:#00d4ff;">🗺️ الخطة — حسب الدروس</a>
+    <div class="part-label">📘 الجزء الأول: الأساسيات</div>
+    <a href="chapter1.html" class="chapter-link">1. البدء مع بايثون</a>
+    <a href="chapter2.html" class="chapter-link">2. المتغيرات وأنواع البيانات البسيطة</a>
+    <a href="chapter3.html" class="chapter-link">3. مقدمة إلى القوائم</a>
+    <a href="chapter4.html" class="chapter-link">4. التعامل مع القوائم</a>
+    <a href="chapter5.html" class="chapter-link">5. جمل if</a>
+    <a href="chapter6.html" class="chapter-link">6. القواميس</a>
+    <a href="chapter7.html" class="chapter-link">7. إدخال المستخدم وحلقات while</a>
+    <a href="chapter8.html" class="chapter-link">8. الدوال</a>
+    <a href="chapter9.html" class="chapter-link">9. الكلاسات</a>
+    <a href="chapter10.html" class="chapter-link">10. الملفات والاستثناءات</a>
+    <a href="chapter11.html" class="chapter-link">11. اختبار الكود</a>
+    <div class="part-label">⚙️ Core Engineering</div>
+    <a href="python_advanced.html" class="chapter-link">🐍 Python Advanced</a>
+    <a href="asyncio.html" class="chapter-link">AsyncIO - البرمجة غير المتزامنة</a>
+    <a href="sql.html" class="chapter-link">SQL - قواعد البيانات</a>
+    <a href="postgresql.html" class="chapter-link">PostgreSQL متقدم</a>
+    <a href="linux.html" class="chapter-link">Linux - سطر الأوامر</a>
+    <a href="git.html" class="chapter-link">Git/GitHub - التحكم بالنسخ</a>
+    <a href="docker.html" class="chapter-link">Docker - الحاويات</a>
+    <div class="part-label">🚀 Backend + AI</div>
+    <a href="fastapi.html" class="chapter-link">FastAPI - تطبيقات الويب</a>
+    <a href="redis.html" class="chapter-link">Redis - التخزين المؤقت</a>
+    <a href="ai_fundamentals.html" class="chapter-link" style="color:#ffd166;font-weight:700;">🤖 أساسيات الذكاء الاصطناعي</a>
+    <div class="part-label">🧠 Agent Engineering</div>
+    <a href="rag.html" class="chapter-link">RAG - التوليد المعزز بالاسترجاع</a>
+    <a href="vector_databases.html" class="chapter-link">Vector Databases - Qdrant</a>
+    <a href="ollama.html" class="chapter-link">Ollama - النماذج المحلية</a>
+    <a href="langchain.html" class="chapter-link">LangChain - بناء تطبيقات LLM</a>
+    <a href="langgraph.html" class="chapter-link">LangGraph - الرسوم البيانية</a>
+    <a href="agents.html" class="chapter-link">🤖 وكلاء الذكاء الاصطناعي</a>
+    <div class="part-label">⚙️ MLOps Foundations</div>
+    <a href="mlflow.html" class="chapter-link">MLflow - تتبع التجارب</a>
+    <a href="cicd.html" class="chapter-link">CI/CD - GitHub Actions</a>
+    <a href="aws.html" class="chapter-link">AWS - EC2 + S3 + IAM</a>
+    <div class="part-label">🔷 مواضيع متقدمة</div>
+    <a href="oop.html" class="chapter-link">🔷 البرمجة كائنية التوجه OOP</a>
+    <div class="part-label">🚀 المشاريع - السنة الأولى</div>
+    <a href="project1.html" class="chapter-link">المشروع 1: غزو الفضائيين</a>
+    <a href="project2.html" class="chapter-link">المشروع 2: تصور البيانات</a>
+    <a href="project3.html" class="chapter-link">المشروع 3: تطبيقات الويب</a>
+    <a href="project_data_api.html" class="chapter-link">المشروع 4: Data API Platform</a>
+    <a href="project_ai_doc_chat.html" class="chapter-link">المشروع 5: AI Document Chat</a>
+    <a href="project_ai_platform.html" class="chapter-link">المشروع 6: AI Platform Deployment</a>
+    <div class="part-label">🧠 السنة الثانية - Advanced AI</div>
+    <a href="multi_agents.html" class="chapter-link">🧠 أنظمة Multi-Agent</a>
+    <a href="websockets.html" class="chapter-link">WebSockets بعمق</a>
+    <a href="message_queues.html" class="chapter-link">Message Queues - Redis/Celery</a>
+    <a href="event_driven.html" class="chapter-link">Event-Driven Architecture</a>
+    <a href="streaming_llm.html" class="chapter-link">Streaming - استجابات LLM</a>
+    <a href="specialized_agents.html" class="chapter-link">وكلاء متخصصون - Research/Review</a>
+    <a href="project_ai_research.html" class="chapter-link">مشروع: Multi-Agent Research</a>
+    <div class="part-label">🏗️ السنة الثانية — Infrastructure</div>
+    <a href="kubernetes.html" class="chapter-link">Kubernetes + Helm</a>
+    <a href="observability.html" class="chapter-link">Observability - Monitoring</a>
+    <a href="infra_dashboard.html" class="chapter-link">مشروع: AI Infra Dashboard</a>
+    <a href="security_perf.html" class="chapter-link">Security + Performance</a>
+    <div class="part-label">🚀 السنة الثانية — Career</div>
+    <a href="code_quality.html" class="chapter-link">إعادة هيكلة + جودة الكود</a>
+    <a href="career_digital.html" class="chapter-link">الظهور الرقمي + LinkedIn</a>
+    <a href="interview_prep.html" class="chapter-link">الاستعداد للمقابلات</a>
+    <a href="career_launch.html" class="chapter-link">إطلاق + Freelance</a>
+    <div class="part-label">📎 تمارين إضافية</div>
+    <a href="exercises.html" class="chapter-link">📝 تمارين + حلول</a>
+    <div class="part-label">📎 الملاحق</div>
+    <a href="appendices.html" class="chapter-link">الملاحق أ-د</a>
+  </nav>
+</div>
+
+<div class="main-content">
+  <div class="chapter-page">
+    <div class="chapter-header">
+      <span class="part-badge">🚀 Backend + AI</span>
+      <h1>🤖 أساسيات الذكاء الاصطناعي</h1>
+      <p>NLP، Embeddings، Transformers، واستخدام APIs الذكاء الاصطناعي</p>
+    </div>
+    <div class="chapter-content">
+
+      <a href="../index.html" class="back-link">← العودة إلى الرئيسية</a>
+
+      <p>
+        هذا الفصل يغطي المفاهيم الأساسية للذكاء الاصطناعي الحديث — من معالجة اللغة الطبيعية (NLP)
+        إلى النماذج الكبيرة (LLMs) و <strong>RAG (Retrieval-Augmented Generation)</strong>.
+      </p>
+
+      <h2 class="section-title">1. NLP — معالجة اللغة الطبيعية</h2>
+
+      <p>NLP (Natural Language Processing) هو فرع الذكاء الاصطناعي الذي يتعامل مع فهم وتوليد اللغة البشرية. الخطوة الأولى في أي نموذج NLP هي الـ Tokenization — تحويل النص إلى أرقام يمكن للنموذج فهمها. كل كلمة أو جزء منها يصبح token، وكل token له رقم معرف (ID) فريد في قاموس النموذج.</p>
+
+      <div class="code-block">
+<span class="cm"># تثبيت المكتبات</span>
+pip install transformers torch sentence-transformers
+
+<span class="cm"># Tokenization — تحويل النص إلى أرقام</span>
+<span class="kw">from</span> transformers <span class="kw">import</span> AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained(<span class="str">"bert-base-uncased"</span>)
+tokens = tokenizer(<span class="str">"Hello, how are you?"</span>)
+<span class="bu">print</span>(tokens)
+<span class="cm"># {'input_ids': [101, 7592, 1010, 2129, 2024, 2017, 1029, 102],</span>
+<span class="cm">#  'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1]}</span>
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> AutoTokenizer.from_pretrained تحمّل الـ tokenizer الخاص بنموذج BERT (مدرّب مسبقاً على نصوص إنجليزية). tokenizer() يحوّل الجملة إلى: input_ids (أرقام تمثل كل token — 101 = [CLS] بداية الجملة، 102 = [SEP] نهاية، 7592 = "Hello"، إلخ) و attention_mask (1 = انتبه لهذا token، 0 = تجاهله). النموذج يحتاج أرقاماً، ليس نصوصاً!</div>
+
+      <h2 class="section-title">2. Embeddings — التمثيل العددي للنصوص</h2>
+
+      <p>التضمينات (Embeddings) هي تحويل النصوص إلى متجهات رقمية (vectors) بأبعاد ثابتة — مثلاً 384 أو 768 أو 1536 بُعداً. الفكرة: النصوص المتشابهة دلالياً (في المعنى) يكون لها متجهات قريبة من بعضها في الفضاء الرياضي. هذا هو أساس البحث الدلالي (Semantic Search) والتجميع (Clustering).</p>
+
+      <div class="code-block">
+<span class="kw">from</span> sentence_transformers <span class="kw">import</span> SentenceTransformer
+
+model = SentenceTransformer(<span class="str">'all-MiniLM-L6-v2'</span>)  <span class="cm"># 384-dimension</span>
+
+sentences = [
+    <span class="str">"أنا أحب البرمجة"</span>,
+    <span class="str">"الذكاء الاصطناعي رائع"</span>,
+    <span class="str">"أحب تعلم أشياء جديدة"</span>
+]
+embeddings = model.encode(sentences)
+
+<span class="bu">print</span>(embeddings.shape)  <span class="cm"># (3, 384)</span>
+
+<span class="cm"># حساب التشابه (Cosine Similarity)</span>
+<span class="kw">from</span> sklearn.metrics.pairwise <span class="kw">import</span> cosine_similarity
+sim = cosine_similarity([embeddings[0]], [embeddings[1]])
+<span class="bu">print</span>(sim)  <span class="cm"># 0.72 — تشابه عالي</span>
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> SentenceTransformer('all-MiniLM-L6-v2') يحمّل نموذج embedding صغير وسريع (384 بُعداً). encode يحوّل كل جملة إلى متجه رقمي. embeddings.shape = (3, 384) — 3 جمل، كل منها متجه بـ 384 رقم. Cosine Similarity يحسب الزاوية بين متجهين: 1 = متطابقان، 0 = لا تشابه، -1 = متعاكسان. نتيجة 0.78 تعني أن الجملتين متشابهتان جداً في المعنى.</div>
+
+      <h2 class="section-title">3. Transformers — نماذج المحولات</h2>
+
+      <p>Transformers هي البنية المعمارية التي تقف وراء كل نماذج LLM الحديثة (GPT, BERT, LLaMA). تستخدم آلية "الانتباه" (Attention) لفهم العلاقات بين كل كلمة وكل كلمة أخرى في النص. مكتبة transformers من Hugging Face تجعل استخدام هذه النماذج سهلاً بخطوط قليلة.</p>
+
+      <div class="code-block">
+<span class="kw">from</span> transformers <span class="kw">import</span> pipeline
+
+<span class="cm"># تصنيف المشاعر</span>
+classifier = pipeline(<span class="str">"sentiment-analysis"</span>)
+result = classifier(<span class="str">"I loved the new course, it was amazing!"</span>)
+<span class="bu">print</span>(result)
+<span class="cm"># [{'label': 'POSITIVE', 'score': 0.999}]</span>
+
+<span class="cm"># توليد النص</span>
+generator = pipeline(<span class="str">"text-generation"</span>, model=<span class="str">"gpt2"</span>)
+output = generator(<span class="str">"The future of AI is"</span>, max_length=<span class="num">50</span>)
+<span class="bu">print</span>(output[0][<span class="str">'generated_text'</span>])
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> pipeline تُبسّط استخدام النماذج: تحمّل النموذج والـ tokenizer تلقائياً. sentiment-analysis يستخدم نموذجاً مدرّباً لتصنيف المشاعر (إيجابي/سلبي) — النتيجة label='POSITIVE' بثقة 99.9%. text-generation مع GPT2 يكمّل النص: يعطي "The future of AI is..." ويولّد متابعة بناءً على ملايين النصوص التي تدرّب عليها. max_length=50 يحدد أقصى عدد من tokens للمخرَج.</div>
+
+      <h2 class="section-title">4. Vector Databases وقواعد البيانات المتجهة</h2>
+
+      <p>قواعد البيانات المتجهة (Vector Databases) تسمح بتخزين embeddings والبحث فيها عن الأكثر تشابهاً. هذا هو أساس RAG وأنظمة التوصية. لكن يمكنك البدء ببساطة باستخدام numpy لحساب التشابه، كما يوضح المثال التالي:</p>
+
+      <div class="code-block">
+<span class="cm"># تخزين embeddings والبحث فيها</span>
+<span class="kw">from</span> sentence_transformers <span class="kw">import</span> SentenceTransformer
+<span class="kw">import</span> numpy <span class="kw">as</span> np
+
+model = SentenceTransformer(<span class="str">'all-MiniLM-L6-v2'</span>)
+
+docs = [
+    <span class="str">"FastAPI is a modern web framework for Python"</span>,
+    <span class="str">"PostgreSQL is a relational database"</span>,
+    <span class="str">"Docker containers are lightweight and portable"</span>
+]
+doc_embeddings = model.encode(docs)
+
+<span class="cm"># سؤال — تحويله إلى embedding</span>
+query = <span class="str">"What is FastAPI?"</span>
+query_emb = model.encode([query])
+
+<span class="cm"># البحث عن الأكثر تشابهاً</span>
+scores = cosine_similarity(query_emb, doc_embeddings)
+best_idx = np.argmax(scores)
+<span class="bu">print</span>(docs[best_idx])  <span class="cm"># أقرب وثيقة للسؤال</span>
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> أولاً نُحوّل كل وثيقة إلى embedding باستخدام النموذج. ثم نُحوّل سؤال المستخدم إلى embedding أيضاً. cosine_similarity يحسب التشابه بين السؤال وكل وثيقة — يُعيد مصفوفة من 3 أرقام (مثلاً [0.92, 0.31, 0.15]). np.argmax يُعيد Index أعلى تشابه (0) — أي "FastAPI is a modern web framework for Python". هذا هو البحث الدلالي الأساسي!</div>
+
+      <div class="note">
+        <strong>ملاحظة:</strong> قواعد البيانات المتجهة مثل <strong>ChromaDB</strong> و <strong>Qdrant</strong>
+        و <strong>Pinecone</strong> تسمح بالبحث عن التشابه على نطاق واسع.
+      </div>
+
+      <h2 class="section-title">5. RAG — Retrieval-Augmented Generation</h2>
+
+      <p>RAG هو نمط يجمع بين استرجاع المعلومات (Retrieval) وتوليد النص (Generation). الفكرة: بدلاً من سؤال النموذج مباشرة (الذي قد تكون معرفته محدودة أو قديمة)، نبحث أولاً في قاعدة معرفتنا عن الوثائق ذات الصلة، ثم نُمرّرها للنموذج كسياق. هذا يُحسّن دقة الإجابات ويُقلل الهلوسة (hallucination).</p>
+
+      <div class="code-block">
+<span class="cm"># RAG: استرجاع + توليد</span>
+<span class="cm"># الخطوات: 1. استرجع الوثائق ذات الصلة  2. أضفها للسياق  3. ولّد الإجابة</span>
+
+<span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+<span class="kw">import</span> chromadb
+
+client = OpenAI(api_key=<span class="str">"sk-..."</span>)
+
+<span class="kw">def</span> <span class="fn">rag_query</span>(question: <span class="bu">str</span>) -> <span class="bu">str</span>:
+    <span class="cm"># 1. استرجاع الوثائق ذات الصلة</span>
+    results = vector_db.similarity_search(question, k=<span class="num">3</span>)
+    context = <span class="str">"\n"</span>.join([doc.page_content <span class="kw">for</span> doc <span class="kw">in</span> results])
+
+    <span class="cm"># 2. إنشاء الـ prompt مع السياق</span>
+    prompt = <span class="str">f"أجب السؤال بناءً على السياق التالي:\n{context}\n\nسؤال: {question}"</span>
+
+    <span class="cm"># 3. توليد الإجابة</span>
+    response = client.chat.completions.create(
+        model=<span class="str">"gpt-4"</span>,
+        messages=[{<span class="str">"role"</span>: <span class="str">"user"</span>, <span class="str">"content"</span>: prompt}]
+    )
+    <span class="kw">return</span> response.choices[0].message.content
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> (1) similarity_search يبحث في قاعدة المتجهات عن أقوى 3 وثائق للسؤال. (2) نضمّ الوثائق في نص واحد (context). (3) نُنشئ prompt يطلب من GPT-4 الإجابة بناءً على هذا السياق فقط — هذا يمنع النموذج من التخمين أو استخدام معرفته القديمة. RAG هو العمود الفقري لتطبيقات AI Chat الحديثة مثل ChatGPT مع البحث في الويب.</div>
+
+      <h2 class="section-title">6. استخدام APIs نماذج LLM</h2>
+
+      <p>أسهل طريقة لاستخدام نماذج LLM هي عبر APIs — لا تحتاج GPU ولا تثبيت نماذج ضخمة. أشهر المزوّدين: OpenAI, Hugging Face, Anthropic. كلها توفر واجهة مشابهة: إرسال رسائل (messages) واستقبال ردود.</p>
+
+      <div class="code-block">
+<span class="cm"># OpenAI API</span>
+<span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+
+client = OpenAI(api_key=<span class="str">"sk-your-key"</span>)
+
+response = client.chat.completions.create(
+    model=<span class="str">"gpt-4"</span>,
+    messages=[
+        {<span class="str">"role"</span>: <span class="str">"system"</span>, <span class="str">"content"</span>: <span class="str">"أنت مساعد خبير في البرمجة."</span>},
+        {<span class="str">"role"</span>: <span class="str">"user"</span>, <span class="str">"content"</span>: <span class="str">"اشرح polymorphism في OOP"</span>}
+    ]
+)
+<span class="bu">print</span>(response.choices[0].message.content)
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> نظام المراسلة (messages): system message يحدد شخصية المساعد ("أنت خبير برمجة")، user message هو سؤال المستخدم. model="gpt-4" يحدد النموذج — كل نموذج له قدرات وسعر مختلف. response.choices[0].message.content يحتوي على النص الذي ولّده النموذج. لا تشارك api_key أبداً — استخدم متغيرات البيئة: os.getenv("OPENAI_API_KEY").</div>
+
+      <div class="code-block">
+<span class="cm"># Hugging Face Inference API (مجاني)</span>
+<span class="kw">import</span> requests
+
+API_URL = <span class="str">"https://api-inference.huggingface.co/models/gpt2"</span>
+headers = {<span class="str">"Authorization"</span>: <span class="str">"Bearer hf_your_token"</span>}
+data = {<span class="str">"inputs"</span>: <span class="str">"The future of AI"</span>}
+response = requests.post(API_URL, headers=headers, json=data)
+<span class="bu">print</span>(response.json())
+      </div>
+      <div class="note"><strong>🔍 كيف يعمل؟</strong> Hugging Face Inference API يتيح استخدام آلاف النماذج المجانية عبر HTTP. نرسل طلب POST إلى URL النموذج مع النص المُدخل. الـ API يُعيد النص المُولّد. المميزات: مجاني للاستخدام المحدود، يدعم مئات النماذج، لا يحتاج تثبيت. العيوب: أبطأ من OpenAI، محدود الاستخدام. مثالي للتجربة والنماذج الأولية.</div>
+
+      <h2 class="section-title">7. AI Fundamentals — المفاهيم الأساسية</h2>
+
+      <ul>
+        <li><strong>Tokenization</strong>: تحويل النص إلى tokens</li>
+        <li><strong>Embeddings</strong>: تمثيل النص كمتجهات رقمية</li>
+        <li><strong>Attention</strong>: آلية الانتباه — فهم العلاقات بين الكلمات</li>
+        <li><strong>Transformers</strong>: بنية تعتمد على self-attention بالكامل</li>
+        <li><strong>Fine-tuning</strong>: تدريب نموذج موجود على بيانات جديدة</li>
+        <li><strong>RAG</strong>: دمج الاسترجاع مع التوليد للإجابات الدقيقة</li>
+      </ul>
+
+      <h2 class="section-title">8. التمارين</h2>
+
+      <div class="exercise">
+        <strong>تمرين 1: Embedding Search</strong><br>
+        أنشئ مجموعة من 10 وثائق، وحوّلها إلى embeddings، ثم اكتب دالة بحث تعيد أفضل 3 نتائج لأي سؤال.
+      </div>
+
+      <div class="exercise">
+        <strong>تمرين 2: RAG Simple</strong><br>
+        استخدم ChromaDB أو قائمة بسيطة لتطبيق RAG: استرجع الوثائق ذات الصلة ثم أرسلها إلى OpenAI API للإجابة.
+      </div>
+
+      <div class="exercise">
+        <strong>تمرين 3: تصنيف النصوص</strong><br>
+        استخدم <span class="inline-code">transformers.pipeline</span> لتصنيف 100 تعليق إلى إيجابي/سلبي.
+      </div>
+
+      <div class="summary-box">
+        <h3>📝 ملخص أساسيات AI</h3>
+        <ul>
+          <li><strong>NLP</strong>: Tokenization, Embeddings, Classification</li>
+          <li><strong>Transformers</strong>: نماذج BERT, GPT وغيرها</li>
+          <li><strong>Vector DB</strong>: ChromaDB, Qdrant, Pinecone</li>
+          <li><strong>RAG</strong>: استرجاع + توليد للإجابات الدقيقة</li>
+          <li><strong>APIs</strong>: OpenAI, Hugging Face, Anthropic</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
