@@ -58,17 +58,5 @@
   </div>
 </div>
 <script src="website/main.js"></script>
-<script>
-  // Handle GitHub Pages subdirectory redirect
-  (function() {
-    var path = window.location.pathname;
-    var repo = '/nullhost/';
-    if (path.startsWith(repo) && path.length > repo.length) {
-      var newPath = path.substring(repo.length - 1);
-      if (newPath.endsWith('/')) newPath += 'index.html';
-      window.location.href = newPath;
-    }
-  })();
-</script>
 </body>
 </html>
